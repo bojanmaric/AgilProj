@@ -1,0 +1,114 @@
+<mat-sidenav-container class="sidenav-container">
+
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>
+      <a class="logo" [routerLink]="['/']">
+        <img src="../../assets/ikoo.png" width="35px" alt="">
+      </a>
+      <a href="" class="title"> Led Master </a></mat-toolbar>
+    <mat-nav-list>
+
+      <mat-accordion>
+        <a mat-list-item href="#">link 1</a>
+
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <a mat-list-item href="">Dekorativna rasveta</a>
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <a mat-list-item href="">Visilice</a>
+          <a mat-list-item href="">Plafonjere</a>
+
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <a mat-list-item href="">spoljna rasveta</a>
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <a mat-list-item href="">Lusteri</a>
+          <a mat-list-item href="">Visilice</a>
+          <a mat-list-item href="">Plafonjere</a>
+
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <a mat-list-item href="">Dekorativna rasveta</a>
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <a mat-list-item href="">Lusteri</a>
+          <a mat-list-item href="">Visilice</a>
+          <a mat-list-item href="">Plafonjere</a>
+
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <a mat-list-item href="">Dekorativna rasveta</a>
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <a mat-list-item href="">Lusteri</a>
+          <a mat-list-item href="">Visilice</a>
+          <a mat-list-item href="">Plafonjere</a>
+
+        </mat-expansion-panel>
+
+      </mat-accordion>
+      <a mat-list-item class="sidea" href="#">Galeri</a>
+      <a mat-list-item class="sidea" href="#">Admin</a>
+      <a mat-list-item class="sidea" href="#">Porucivanje</a>
+
+      <a mat-list-item href="#">Link </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content fixedInViewport>
+    <mat-toolbar color="primary" position="start">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <!-- *ngIf="isHandset$ | async"  -->
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <a class="logo" [routerLink]="['/']">
+        <img src="../../assets/ikoo.png" width="35px" alt="">
+      </a>
+      <h4> <a [routerLink]="['/']" class=""> Led Master </a></h4>
+      <div class="cen">
+        <a class="contenta title" href="#">Galeri</a>
+        <a class="contenta title" href="#">Admin</a>
+        <a class="contenta title" href="#">Porucivanje</a>
+      </div>
+      <button mat-button [matMenuTriggerFor]="belowMenu">
+        <mat-icon>add_circle_outline</mat-icon>
+      </button>
+      <mat-menu #belowMenu="matMenu" xPosition="before">
+        <a mat-menu-item [routerLink]="['/addArtical']">Dodaj Artikal</a>
+        <a mat-menu-item [routerLink]="['/addGallery']">Dodaj u galeriju</a>
+        <a mat-menu-item [routerLink]="['/addSlide']">Dodaj slide</a>
+      </mat-menu>
+
+      <span class="spaces"></span>
+      <button class="shopbtn">
+        <mat-icon class="shopBadge" matBadge="{{countShop}}" matBadgeColor="accent">shopping_cart</mat-icon>
+      </button>
+      <form class="search" action="">
+        <input class="inputsearch" type="text" placeholder="Search">
+      </form>
+
+
+      <button *ngIf="!ulogovanIn()" mat-mini-fab color="primary"class="logbtn" [routerLink]="['/login']">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <button *ngIf="ulogovanIn()"  color="warn" class="logbtn" mat-mini-fab (click)="logout()" ><mat-icon>exit_to_app</mat-icon></button>
+    </mat-toolbar>
+   
+      <router-outlet></router-outlet>
+    
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,111 @@
+<div style="padding: 1rem;"></div>
+
+<div class="container" style="width: 100%;">
+    <div style="padding: 1rem;"></div>
+
+    <h1 class="addh1">Unesite neophodna polja</h1>
+    <form [formGroup]="artikal" (ngSubmit)="add()" class="addArt">
+        <mat-form-field appearance="fill">
+            <mat-label>Naziv Artikla</mat-label>
+            <input matInput formControlName="nazivArtikla" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Sifra Artikla</mat-label>
+            <input matInput formControlName="sifraArtikla" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Cena Artikla</mat-label>
+            <input matInput type="number" formControlName="cenaArtikla" required>
+            <span matSuffix>.00 RSD</span>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Kategorija</mat-label>
+            <mat-select required formControlName="kategorija">
+                <mat-option value="dekorativnaRasveta">Dekorativna rasveta</mat-option>
+                <mat-option value="ledRasveta">Led rasveta</mat-option>
+                <mat-option value="spoljnaRasveta">Spoljna rasveta</mat-option>
+                <mat-option value="ugradnaRasveta">Ugradna rasveta</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Vrsta Proizvoda</mat-label>
+            <mat-select required formControlName="vrstaProizvoda">
+                <mat-option value="lusteri">Lusteri</mat-option>
+                <mat-option value="visilice">Visilice</mat-option>
+                <mat-option value="spotovi">Spotovi</mat-option>
+                <mat-option value="decijaRasveta">Decija rasveta</mat-option>
+                <mat-option value="plafonjere">Plafonjere</mat-option>
+                <mat-option value="podneLampe">Podne lampe</mat-option>
+                <mat-option value="zidneLampe">Zidne lampe</mat-option>
+                <mat-option value="plafonskeLampe">Plafonske lampe</mat-option>
+                <mat-option value="stoneLampe">Led sijalice</mat-option>
+                <mat-option value="stoneLampe">Led cevi</mat-option>
+                <mat-option value="stoneLampe">Led paneli</mat-option>
+                <mat-option value="stoneLampe">Punjive svetiljke</mat-option>
+                <mat-option value="stoneLampe">Led reflektori</mat-option>
+                <mat-option value="stoneLampe">Fenjeri</mat-option>
+                <mat-option value="stoneLampe">Brodske lampe</mat-option>
+                <mat-option value="stoneLampe">Rozetne</mat-option>
+                <mat-option value="stoneLampe">Stone lampe</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Jacina </mat-label>
+            <input matInput formControlName="jacina">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Tip Grla</mat-label>
+            <input matInput formControlName="tipGrla">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Izbor Svetla</mat-label>
+            <input matInput formControlName="izborSvetla">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Boja Svetla</mat-label>
+            <input matInput formControlName="bojaSvetla">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Napon</mat-label>
+            <input matInput formControlName="napon">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Boja</mat-label>
+            <input matInput formControlName="boja">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Materijal</mat-label>
+            <input matInput formControlName="materijal">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Dimenzija</mat-label>
+            <input matInput formControlName="dimenzije">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Stepen Zastite</mat-label>
+            <input matInput formControlName="stepenZastite">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Popust</mat-label>
+            <input  matInput type="number" formControlName="popust">
+        </mat-form-field>
+
+
+        <mat-checkbox formControlName="akcija">Akcija</mat-checkbox>
+
+
+        <div class="form-group " style=" width: 400px; ">
+            <label for="slika" class="float-left">Slika</label>
+            <input type="file" (change)="onImageAdded($event)" class="form-control-file"  
+                id="#slika" required>
+        </div>
+
+        <button mat-raised-button class="center" color="primary" type="submit">Dodaj Artikal</button>
+        <button mat-raised-button class="float-right" color="warn" type="reset">Reset</button>
+
+
+    </form>
+    <div *ngIf="showSpiner" class="spinerr">
+        <mat-spinner></mat-spinner>
+    </div>
+</div>

@@ -1,0 +1,100 @@
+<div class="edidijalog">
+    <form (ngSubmit)="update()" class="addArt">
+        <mat-form-field appearance="fill">
+            <mat-label>Naziv Artikla</mat-label>
+            <input matInput [(ngModel)]="data.nazivArtikla" name="nazivArtikla">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Sifra Artikla</mat-label>
+            <input matInput [(ngModel)]="data.sifraArtikla" name="sifraArtikla">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Cena Artikla</mat-label>
+            <input matInput type="number" [(ngModel)]="data.cenaArtikla" name="cenaArtikla">
+            <span matSuffix>.00 RSD</span>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Kategorija</mat-label>
+            <mat-select [(ngModel)]="data.kategorija" name="kategorija">
+                <mat-option value="dekorativnaRasveta">Dekorativna rasveta</mat-option>
+                <mat-option value="ledRasveta">Led rasveta</mat-option>
+                <mat-option value="spoljnaRasveta">Spoljna rasveta</mat-option>
+                <mat-option value="ugradnaRasveta">Ugradna rasveta</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Vrsta Proizvoda</mat-label>
+            <mat-select [(ngModel)]="data.vrstaProizvoda" name="vrstaProizvoda">
+                <mat-option value="lusteri">Lusteri</mat-option>
+                <mat-option value="visilice">Visilice</mat-option>
+                <mat-option value="spotovi">Spotovi</mat-option>
+                <mat-option value="decijaRasveta">Decija rasveta</mat-option>
+                <mat-option value="plafonjere">Plafonjere</mat-option>
+                <mat-option value="podneLampe">Podne lampe</mat-option>
+                <mat-option value="zidneLampe">Zidne lampe</mat-option>
+                <mat-option value="plafonskeLampe">Plafonske lampe</mat-option>
+                <mat-option value="stoneLampe">Led sijalice</mat-option>
+                <mat-option value="stoneLampe">Led cevi</mat-option>
+                <mat-option value="stoneLampe">Led paneli</mat-option>
+                <mat-option value="stoneLampe">Punjive svetiljke</mat-option>
+                <mat-option value="stoneLampe">Led reflektori</mat-option>
+                <mat-option value="stoneLampe">Fenjeri</mat-option>
+                <mat-option value="stoneLampe">Brodske lampe</mat-option>
+                <mat-option value="stoneLampe">Rozetne</mat-option>
+                <mat-option value="stoneLampe">Stone lampe</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Jacina </mat-label>
+            <input matInput [(ngModel)]="data.jacina" name="jacina">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Tip Grla</mat-label>
+            <input matInput [(ngModel)]="data.tipGrla" name="tipGrla">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Izbor Svetla</mat-label>
+            <input matInput [(ngModel)]="data.izborSvetla" name="izborSvetla">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Boja Svetla</mat-label>
+            <input matInput [(ngModel)]="data.bojaSvetla" name="bojaSvetla">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Napon</mat-label>
+            <input matInput [(ngModel)]="data.napon" name="napon">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Boja</mat-label>
+            <input matInput [(ngModel)]="data.boja" name="boja">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Materijal</mat-label>
+            <input matInput [(ngModel)]="data.materijal" name="materijal">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Dimenzija</mat-label>
+            <input matInput [(ngModel)]="data.dimenzije" name="dimenzije">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Stepen Zastite</mat-label>
+            <input matInput [(ngModel)]="data.stepenZastite" name="stepenZastite">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Popust</mat-label>
+            <input matInput type="number" [(ngModel)]="data.popust" name="popust">
+        </mat-form-field>
+
+
+        <mat-checkbox [(ngModel)]="data.akcija" name="akcija">Akcija</mat-checkbox>
+
+
+        <div>
+            <button mat-raised-button class="center" color="primary" [mat-dialog-close]="1" type="submit">Edit</button>
+            <button mat-raised-button class="float-right" color="warn" [mat-dialog-close]="-1"
+                (click)="cancel()">CANCEL</button>
+        </div>
+
+    </form>
+</div>

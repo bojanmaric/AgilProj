@@ -1,0 +1,75 @@
+<div class="home">
+
+  <ngb-carousel>
+    <ng-template ngbSlide>
+      <div class="slideimg">
+        <img [src]="carouselImg[0]" alt="Random first slide">
+      </div>
+      <div class="carousel-caption">
+        <h1 class="lepas">Sve za vaš dom</h1>
+        <p class="lepasa">Veliki izbor lustera, lampi, led rasvete...</p>
+
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="slideimg">
+        <img [src]="carouselImg[1]" alt="Random second slide">
+      </div>
+      <div class="carousel-caption">
+        <h1 class="lepas">Najmodernija rasveta</h1>
+        <p class="lepasa">Rasveta jedinstvena u svakom pogledu...</p>
+
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="slideimg">
+        <img [src]="carouselImg[2]" alt="Random third slide">
+      </div>
+      <div class="carousel-caption">
+        <h1 class="lepas">Višegodišnje iskustvo</h1>
+        <p class="lepasa">Profesionalno osoblje, spremno da odgovori na sve vase zahteve.</p>
+
+      </div>
+    </ng-template>
+  </ngb-carousel>
+  <div style="margin: 1rem;"></div>
+  <div class="container-fluid">
+    <h1 class="text-primary">Akcijski proizvodi</h1>
+    <hr>
+
+
+
+
+    <pagination-controls class="text-center myPagination" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
+      maxSize="5"> </pagination-controls>
+    <div class="proizvodi">
+
+      <div *ngFor="let art of artikli |paginate:{ 
+        itemsPerPage:20, 
+        currentPage: p}">
+        <mat-card>
+         
+          <img  mat-card-image [src]="getImage(art.srcSlika)" alt="">
+          <mat-card-content>
+            <h3>{{art.cenaArtikla}}.00</h3>
+            <button mat-mini-fab  ><mat-icon>shopping_basket</mat-icon></button>
+          </mat-card-content>
+          <mat-card-title>{{art.nazivArtikla}} &nbsp; {{art.sifraArtikla}}</mat-card-title>
+           
+          <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="editArt(art)">EDIT</button>
+            <button mat-raised-button color="warn" (click)="deleteArt(art)"> DELETE</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+
+    </div>
+
+    <pagination-controls class="text-center myPagination" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
+      maxSize="5"> </pagination-controls>
+  </div>
+</div>
+
+<div *ngIf="showSpiner" class="spinerr">
+  <mat-spinner></mat-spinner>
+</div>

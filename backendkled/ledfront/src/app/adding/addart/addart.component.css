@@ -1,0 +1,39 @@
+.addArt{
+    width: 100%;
+    box-shadow: 0 0 10px 0 rgb(106, 106, 106);
+    margin-bottom: 2rem;
+    
+    text-align: center;
+    padding: 1rem;
+}
+.addh1{
+    text-align: center;
+    
+}
+.addArt mat-form-field{
+    
+    padding:.4rem;
+}
+
+.spinerr{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    opacity: .8;
+    background: rgb(81, 81, 81);
+    position: fixed;
+
+}
+.spinerr mat-spinner{
+    top: 40%;
+    color: rgb(152, 4, 4)!important;
+}
+.addArt button{
+    border: 0;
+    margin: 15px;
+    outline: none;
+}
