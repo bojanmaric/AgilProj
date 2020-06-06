@@ -1,0 +1,30 @@
+.galerija{
+   
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+.galerija .slika {
+    margin: .3rem;
+    padding: 0;
+overflow: hidden;
+
+}
+.galerija .slika img{
+    width: 300px;
+    height: auto;
+    transition: .5s;
+    
+}
+.galerija .slika img:hover, img:focus{
+    transform: scale(1.2);
+}
+
+@media screen and (max-width:480px){
+    .galerija .slika{
+        margin: .1rem;
+    } 
+    .galerija .slika img{
+        width: 150px;
+    }
+}

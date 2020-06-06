@@ -7,7 +7,7 @@ const path=require('path');
 const crypto=require('crypto');
 const multer =require('multer');
 const fs=require('fs');
-//const path=require('path');
+
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -66,6 +66,17 @@ router.put('/:id', function(req,res){
 
 
 })
+router.get('/searchArt/:search', function(req,res){
+   
+    var search= req.params.search.toString();
+    Artikal.searchArt(search,(err,art)=>{
+        if(err)
+            res.json({success:false, msg:'Failed to seach articles'});
+        else
+            res.json({success:true,artikli:art});
+    });
+
+});
 
 router.get('/getAll',function(req,res,next){
 
@@ -78,6 +89,21 @@ router.get('/getAll',function(req,res,next){
     })
 
 });
+router.get('/getArt/:id',(req,res)=>{
+
+    console.log(req.params.id)
+    Artikal.getArtikalById(req.params.id.toString(),(err,artikal)=>{
+        if(err){
+            res.json({success:false, msg:'Greska prilikom pretrage'})
+        }else{
+            res.json({artikal:artikal})
+        }
+
+
+    })
+
+
+})
 router.get('/image/:image',(req,res)=>{
 
     if(!fs.existsSync(path.join(__dirname, '../uploads/artikli/',req.params.image)))

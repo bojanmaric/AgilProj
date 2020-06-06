@@ -1,0 +1,29 @@
+.email{
+    margin: 2rem auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%
+}
+.email form{
+    text-align:center;
+    margin: 2rem auto;
+    width: 90%;
+    display: inline-block;
+    
+    
+}
+.email form mat-form-field, button{
+    width: 90%;
+    margin: .5rem ;
+    outline: none;
+    
+}
+
+@media screen and (max-width: 768px){
+    .email{
+        grid-template-columns: 100%;
+    }
+    .email form{
+        width: 70%;
+    }
+}

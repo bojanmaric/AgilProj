@@ -1,0 +1,30 @@
+<div class="email">
+
+    <form [formGroup]="emailForm" (ngSubmit)="sendMail()">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Ime i Prezime pošiljaoca</mat-label>
+            <input type="text" required matInput formControlName="imePosiljaoca" placeholder="Ime i Prezime">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput required formControlName="emailPosiljaoca" placeholder="Ex. pat@example.com">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Kontakt</mat-label>
+            <input type="text" matInput placeholder="Kontakt" formControlName="kontaktPosiljaoca">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Sadrzaj</mat-label>
+            <textarea matInput formControlName="sadrzaj" required ></textarea>
+        </mat-form-field>
+
+
+        <button type="submit" mat-raised-button color="primary"> Pošaljite poruku</button>
+    </form>
+
+    <div class="lokation">
+       </div>
+
+
+</div>

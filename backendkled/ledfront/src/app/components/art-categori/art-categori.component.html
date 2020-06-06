@@ -1,0 +1,31 @@
+
+<div style="margin: 2rem 1rem;">
+
+  <pagination-controls class="text-center myPagination" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
+  maxSize="5"> </pagination-controls>
+<div class="proizvodi">
+
+  <div *ngFor="let art of artikli |paginate:{ 
+    itemsPerPage:20, 
+    currentPage: p}">
+    <mat-card>
+     
+      <img  mat-card-image [src]="getImage(art.srcSlika)" alt="">
+      <mat-card-content>
+        <h3>{{art.cenaArtikla}}.00</h3>
+        <button mat-mini-fab (click)="addShop(art)" ><mat-icon>shopping_basket</mat-icon></button>
+      </mat-card-content>
+      <mat-card-title>{{art.nazivArtikla}} &nbsp; {{art.sifraArtikla}}</mat-card-title>
+       
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="editArt(art)">EDIT</button>
+        <button mat-raised-button color="warn" (click)="deleteArt(art)"> DELETE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+</div>
+
+<pagination-controls class="text-center myPagination" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
+  maxSize="5"> </pagination-controls>
+</div>

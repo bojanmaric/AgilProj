@@ -1,0 +1,78 @@
+.artikal{
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.artikal .slika{
+    position: relative;
+    width: 80%;
+}
+.artikal .slika img{
+    width: 100%;
+}
+.artikal .slika .akcija{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+}
+.popust{
+    text-decoration-line: line-through;
+}
+.podaci{
+    margin: 1rem .5rem;
+    box-shadow: 0px 1px 3px 1px rgb(152, 152, 152);
+    padding: 2rem;
+}
+.opisArtikla h2{
+    font-size: 16px;
+    border-bottom: dashed 1px rgb(152, 152, 152);
+
+
+}
+.dodajBtn{
+    background-color: rgb(0, 177, 35);
+    height: 2.3rem;
+    outline: none;
+    font-size: 18px;
+    color: #fff;
+}
+.kol{
+  
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.kol input{
+    
+    text-decoration: none;
+    width: 60px;
+    margin: 0 10px;
+    font-size: 20px;
+    padding: 6px;
+    border-radius: 3px;
+    border: 1px solid rgb(169, 169, 169);
+    outline: none;
+    
+}
+.kol span{
+    cursor: pointer;
+    font-size: 20px;
+    border: 1px solid rgb(169, 169, 169);
+    padding: 5px;
+    border-radius: 3px;
+    outline: none;
+
+}
+
+@media screen and (max-width:768px){
+    .artikal{
+        grid-template-columns: 100%;
+    }
+.artikal .slika{
+    width: 90%;
+    margin: auto;
+}
+}

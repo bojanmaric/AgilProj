@@ -49,10 +49,10 @@
         currentPage: p}">
         <mat-card>
          
-          <img  mat-card-image [src]="getImage(art.srcSlika)" alt="">
+          <img (click)="openArtikal(art)"  mat-card-image [src]="getImage(art.srcSlika)" alt="">
           <mat-card-content>
             <h3>{{art.cenaArtikla}}.00</h3>
-            <button mat-mini-fab  ><mat-icon>shopping_basket</mat-icon></button>
+            <button  mat-icon-button color="accent" (click)="addShop(art)" ><mat-icon>shopping_basket</mat-icon></button>
           </mat-card-content>
           <mat-card-title>{{art.nazivArtikla}} &nbsp; {{art.sifraArtikla}}</mat-card-title>
            

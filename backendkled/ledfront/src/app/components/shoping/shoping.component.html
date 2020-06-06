@@ -1,0 +1,41 @@
+<div class="shopping ">
+    <table>
+        <tr>
+            <th>
+                
+            </th>
+            <th>
+
+            </th>
+            <th>
+                Proizvod
+            </th>
+            <th>
+                Cena
+            </th>
+            <th>
+                Kolicina
+            </th>
+            <th>
+                Ukupno
+            </th>
+        </tr>
+
+        <tr *ngFor="let art of artikli">
+
+                <td ><button mat-mini-fab color="warn" (click)="brisiShop(art)"> <mat-icon >delete</mat-icon> </button></td>
+                <td><img [src]="getImage(art.srcSlika)" width="100px"  alt=""></td>
+                <td><h3>{{art.nazivArtikla}}</h3></td>
+                <td><h3>{{art.cenaArtikla}}.00</h3></td>
+                <td>{{art.kolicina}} kom</td>
+                <td>{{art.ukupno}}.00</td>
+        </tr>
+    </table>
+
+    <button class="center"  mat-raised-button color="primary" (click)="shopArtikle()"> Pošaljite zahtev</button>
+    <button class="float-right" mat-raised-button color="warn"> Izbriši porudzbinu</button>
+
+
+
+
+</div>

@@ -7,6 +7,8 @@ var cors =require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var artikalRouter = require('./routes/artikal');
+var porudzbinaRouter=require('./routes/porudzbina');
+var galleriRouter=require('./routes/gallery')
 
 const mongoose= require('mongoose');
 const config=require('./config/database');
@@ -38,6 +40,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/artikal',artikalRouter);
+app.use('/porudzbina',porudzbinaRouter);
+app.use('/gallery',galleriRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

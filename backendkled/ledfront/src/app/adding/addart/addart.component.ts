@@ -14,7 +14,7 @@ export class AddartComponent implements OnInit {
 
   slika: File = null;
 
-  correctForm: boolean = false;
+ 
 
   srcSlika: string;
 

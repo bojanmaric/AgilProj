@@ -1,0 +1,25 @@
+    <div style="margin-top: 1rem;"></div>
+    <h1 *ngIf="!prazan" class="text-center text-primary">Rezultati pretrage <span class="text-success">"{{searchText}}"</span></h1>
+    
+     <h1 *ngIf="prazan" class="text-primary text-center"> Nije nista pronadjeno po obeležju: <span class="text-danger">"{{searchText}}"</span> </h1>
+    <hr>
+     <div class="proizvodi">
+
+    <div *ngFor="let art of artsear">
+      <mat-card>
+       
+        <img  mat-card-image [src]="getImage(art.srcSlika)" alt="">
+        <mat-card-content>
+          <h3>{{art.cenaArtikla}}.00</h3>
+          <button mat-mini-fab (click)="addShop(art)"  ><mat-icon>shopping_basket</mat-icon></button>
+        </mat-card-content>
+        <mat-card-title>{{art.nazivArtikla}} &nbsp; {{art.sifraArtikla}}</mat-card-title>
+         
+        <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="editArt(art)">EDIT</button>
+          <button mat-raised-button color="warn" (click)="deleteArt(art)"> DELETE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>

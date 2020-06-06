@@ -21,7 +21,9 @@
     flex-wrap: wrap;
 
 }
+
 mat-card-content{
+    overflow: hidden;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     
@@ -35,13 +37,25 @@ mat-card-content h3{
     color: #a47a06;
 }
 mat-card-content button{
-    position: relative;
-   margin-left: 50%;
+    
+    margin-left: 50%;
+   outline: none;
+   transition: .6s;
+}
+mat-card-content button:hover{
+    color: #68049d;
+    background: #dcdcdc;
+
 }
 mat-card img{
     
     transition: .7s;
+    height: auto;
 
+}
+mat-card img:hover,
+    mat-card img:focus{
+    transform: scale(1.2);
 }
 
 mat-card-title{
@@ -52,9 +66,8 @@ mat-card-title{
    
 }
 mat-card{
-    min-width: 150px;
-    max-width: 220px;
-    width: 100%;
+    width: 200px;
+   
     margin: 1rem .5rem ;
     overflow: hidden;
    
@@ -63,13 +76,11 @@ mat-card{
 ngb-carousel{
     z-index: 0;
 }
-mat-card img{
-    height: auto
-}
 mat-card-actions{
   text-align: center;
 }
 mat-card-actions button{
+    
     
     border: none;
     outline: none;
@@ -90,4 +101,10 @@ mat-card-actions button{
 .spinerr mat-spinner{
     top: 40%;
     color: rgb(152, 4, 4)!important;
+}
+@media screen  and (max-width:480px){
+   mat-card{
+       margin: .3rem auto;
+       width: 90%;
+   }
 }

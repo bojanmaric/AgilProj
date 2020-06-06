@@ -76,6 +76,7 @@ const ArtikalShema=mongoose.Schema({
 const Artikal = module.exports=mongoose.model('Item',ArtikalShema);
 
 module.exports.getArtikalById=function(id, callback){
+    
     Artikal.findById(id, callback);
 }
 
@@ -84,6 +85,11 @@ module.exports.addArtikal=function(artikal,callback){
 }
 module.exports.getAllArtikle=function(query,callback){
     Artikal.find(query).populate().exec(callback);
+}
+module.exports.searchArt=function(query,callback){
+    
+    Artikal.find({"nazivArtikla":{'$regex':query,'$options':'i'}},callback);
+
 }
 module.exports.updateArtikla=function(id,artikal,callback){
     

@@ -31,6 +31,7 @@ mat-expansion-panel-header{
 }
 .shopBadge{
   margin-right: 15px;
+  outline: none;
 }
 .shopbtn{
   margin-top: 7px;
@@ -40,10 +41,12 @@ mat-expansion-panel-header{
   border: none;
   color: #fff;
   transition: .5s;
+  outline: none;
 }
 .shopbtn:hover{
   color: rgb(213, 213, 213);
 }
+
 
 mat-sidenav{
   background: url('../../assets/visilica-trivia-340-e-27-3x40w-brilight.png') no-repeat , rgb(241, 241, 241);
@@ -58,12 +61,16 @@ mat-sidenav-content{
   right: 0;
   left: 0;
   
+  
   position: fixed;
 
 }
 
 a.contenta{
-  padding: 15px;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 .cen{
   width: 100%;
@@ -96,14 +103,15 @@ mat-sidenav  mat-nav-list{
   border-radius: 3rem;
   border: none;
   height: 30px;
-  width: 100px;
+  width: 130px;
   transition: .5s;
   outline: none;
- 
+  font-size: 14px;
+  text-align: center;
  
 }
 .inputsearch::placeholder{
-  font-size: 14px;
+  
   text-align: center;
   font-weight: 200;
 }
@@ -159,12 +167,16 @@ h4 a{
 }
 
 @media screen and (max-width:480px){
-  a.title{
+  /*a.title{
     display: none;
+  }*/
+  .inputsearch{
+    width: 90px;
   }
   .inputsearch:focus{
     width: 110px;
     padding-left:10px;
+    margin-left: 0;
     
   }
   /*.logbtn{

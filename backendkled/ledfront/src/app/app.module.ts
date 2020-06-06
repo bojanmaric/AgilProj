@@ -24,6 +24,15 @@ import { FormsModule } from '@angular/forms';
 import {MaterialModule}from './material/material.module';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { EditArtDialogComponent } from './components/dialogs/edit-art-dialog/edit-art-dialog.component';
+import { SearchComponent } from './components/search/search.component';
+import { ShopingComponent } from './components/shoping/shoping.component';
+import { ArtCategoriComponent } from './components/art-categori/art-categori.component';
+import { EmailsComponent } from './components/emails/emails.component';
+import {EmailsService}from './servisi/emails.service';
+import { ShopComponent } from './components/dialogs/shop/shop.component';
+import { GalleryService } from './servisi/gallery.service';
+import { GalerijaComponent } from './components/galerija/galerija.component';
+import { ArtikalComponent } from './components/home/artikal/artikal.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +45,14 @@ import { EditArtDialogComponent } from './components/dialogs/edit-art-dialog/edi
     AddslideComponent,
     LoginComponent,
     RegistrationComponent,
-    EditArtDialogComponent
+    EditArtDialogComponent,
+    SearchComponent,
+    ShopingComponent,
+    ArtCategoriComponent,
+    EmailsComponent,
+    ShopComponent,
+    GalerijaComponent,
+    ArtikalComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +71,7 @@ import { EditArtDialogComponent } from './components/dialogs/edit-art-dialog/edi
     provide:HTTP_INTERCEPTORS, 
     useClass:AuthInterceptor,
     multi:true
-  },AuthGuard,LoginService,ArtikalService],
+  },AuthGuard,LoginService,ArtikalService, EmailsService, GalleryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

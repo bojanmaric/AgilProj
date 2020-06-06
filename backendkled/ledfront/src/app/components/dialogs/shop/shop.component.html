@@ -1,0 +1,66 @@
+<div class="shop">
+    <form [formGroup]="kupacPodaci" (ngSubmit)="shop()">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Ime i Prezime pošiljaoca</mat-label>
+            <input type="text" required matInput formControlName="imeKupca" placeholder="Ime i Prezime">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Adresa</mat-label>
+            <input matInput type="text" placeholder="Adresa" formControlName="adresaKupca" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Kontakt</mat-label>
+            <input type="text" matInput placeholder="Kontakt" required formControlName="kontaktKupca">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="emailKupca" placeholder="Ex. pat@example.com">
+        </mat-form-field>
+
+        
+        <table class="table table-hover">
+            <tr>
+    
+                <th>
+    
+                </th>
+                <th>
+                    Proizvod
+                </th>
+                <th>
+                    Cena
+                </th>
+                <th>
+                    Kolicina
+                </th>
+                <th>
+                    Ukupno
+                </th>
+            </tr>
+    
+            <tr *ngFor="let art of artikli">
+    
+                <td><img [src]="getImage(art.srcSlika)" width="100px" alt=""></td>
+                <td>
+                    <h3>{{art.nazivArtikla}}</h3>
+                </td>
+                <td>
+                    <h3>{{art.cenaArtikla}}.00</h3>
+                </td>
+                <td>{{art.kolicina}} kom</td>
+                <td>{{art.ukupno}}.00</td>
+    
+            </tr>
+        
+        </table>
+
+        <button class="center" type="submit" mat-raised-button color="primary"> Porucite Artikle</button>
+    </form>
+    
+</div>
+
+<div *ngIf="showSpiner" class="spinerr">
+    <mat-spinner></mat-spinner>
+  </div>

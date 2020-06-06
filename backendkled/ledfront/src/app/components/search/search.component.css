@@ -1,0 +1,60 @@
+
+.proizvodi{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+
+}
+mat-card-content{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    
+}
+
+mat-card-content h3{
+    width: 100%;
+    margin: auto;
+    
+    font-weight: 500;
+    font-size: 20px;
+    color: #a47a06;
+}
+mat-card-content button{
+    position: relative;
+   margin-left: 50%;
+   outline: none;
+}
+mat-card img{
+    
+    transition: .7s;
+
+}
+
+mat-card-title{
+    text-align: center;
+    font-size: 13px!important;
+    text-transform: uppercase;
+    color: rgb(74, 150, 255);
+   
+}
+mat-card{
+    min-width: 150px;
+    max-width: 220px;
+    width: 100%;
+    margin: 1rem .5rem ;
+    overflow: hidden;
+   
+    
+}
+mat-card img{
+    height: auto
+}
+mat-card-actions{
+  text-align: center;
+}
+mat-card-actions button{
+    
+    border: none;
+    outline: none;
+}

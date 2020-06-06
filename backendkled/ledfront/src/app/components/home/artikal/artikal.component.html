@@ -1,0 +1,44 @@
+<div class="artikal">
+    <div class="slika">
+        <img [src]="getImage(artikal)" alt="">
+        <div class="akcija">
+            <img *ngIf="artikal.akcija" src="../../../../assets/akcija.png" alt="">
+        </div>
+    </div>
+    <div class="podaci">
+        <h1 class="text-uppercase">{{artikal.nazivArtikla}}</h1>
+
+        <h4>{{artikal.sifraArtikla}}</h4>
+        <h2 class="popust  text-danger" *ngIf="artikal.popust">
+            {{artikal.cenaArtikla + (artikal.cenaArtikla*(artikal.popust/(100-artikal.popust))) }}.00 din.</h2>
+        <h1><span class="text-success"> {{artikal.cenaArtikla}}.00 din. </span></h1>
+        <div class="opisArtikla">
+            <h2 *ngIf="artikal.jacina"> Jačina <span class="float-right text-success">{{artikal.jacina}} </span></h2>
+            <h2 *ngIf="artikal.tipGrla">Tip grla <span class="float-right text-success">{{artikal.tipGrla}}</span></h2>
+
+            <h2 *ngIf="artikal.izborSvetla"> Izbor sveta<span
+                    class="float-right text-success">{{artikal.izborSvetla}}</span> </h2>
+            <h2 *ngIf="artikal.bojaSvetla">Boja svetla<span
+                    class="float-right text-success">{{artikal.bojaSvetla}}</span></h2>
+            <h2 *ngIf="artikal.napon"> Napon<span class="float-right text-success">{{artikal.napon}}</span></h2>
+            <h2 *ngIf="artikal.boja">Boja<span class="float-right text-success">{{artikal.boja}}</span></h2>
+            <h2 *ngIf="artikal.materijal">Materijal<span class="float-right text-success">{{artikal.materijal}}</span>
+            </h2>
+            <h2 *ngIf="artikal.dimenzije">Dimenzije<span class="float-right text-success">{{artikal.dimenzije}}</span>
+            </h2>
+            <h2 *ngIf="artikal.stepenZastite">Stepen zaštite<span
+                    class="float-right text-success">{{artikal.stepenZastite}}</span></h2>
+        </div>
+
+        <div class="akcija">
+            <div class="kol">
+                <span (click)="minus()">-</span>
+                <input type="number" [(ngModel)]="kolicina">
+                <span (click)="plus()">+</span>
+                <button  mat-raised-button class="dodajBtn float-right"> Dodaj u korpu</button>
+            </div>
+          
+        </div>
+    </div>
+
+</div>
