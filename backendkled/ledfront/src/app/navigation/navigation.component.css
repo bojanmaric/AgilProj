@@ -133,6 +133,15 @@ mat-sidenav  mat-nav-list{
   text-decoration: none;
   transition: .4;
 }
+.maincontent{
+  min-height: 60vh;
+  position: relative;
+}
+.footer{
+  position: bottom;
+  bottom: 0;
+  width: 100%;
+}
 .title:hover{
   color: rgb(179, 179, 179);
 }

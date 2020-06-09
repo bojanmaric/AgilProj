@@ -23,6 +23,10 @@ export class ArtikalComponent implements OnInit {
   kolicina=0;
   ngOnInit(): void {
 
+   this.loadArt();
+
+  }
+  loadArt(){
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.id = params.get('id');
       this.artiService.getArtikalbyId(this.id).subscribe(
@@ -32,10 +36,6 @@ export class ArtikalComponent implements OnInit {
         }
       );
     })
-
-
-    console.log(this.artikal)
-    //this.artikal=this.artiService.dataChange()
 
 
   }
@@ -57,7 +57,7 @@ export class ArtikalComponent implements OnInit {
   
 
   getImage(art){
-    return this.putanja+art.srcSlika
+    return this.putanja+art.srcSlika;
   }
 
 }

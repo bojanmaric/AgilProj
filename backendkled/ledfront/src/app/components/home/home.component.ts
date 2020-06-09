@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
 
 
   showSpiner = false;
-  artikli: Array<Artikal>;
+  artikli: Array<Artikal>=new Array<Artikal>();
   akcijski: Array<Artikal>;
   p: any;
   ulogovan=false;
@@ -47,11 +47,14 @@ export class HomeComponent implements OnInit {
     this.artiService.getAllArtikle().subscribe(res => {
 
       this.artikli = res['artikli'];
+      
 
     },
       error => {
         this.snacBar.open("greska", "OK")
       });
+
+      
 
   }
   getImage(art) {

@@ -1,7 +1,6 @@
-
 <mat-sidenav-container class="sidenav-container" autosize>
 
-  <mat-sidenav #drawer class="sidenav"  fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <mat-toolbar>
       <a class="logo" [routerLink]="['/']">
@@ -11,13 +10,13 @@
     <mat-nav-list>
 
       <mat-accordion>
-        
-      <a mat-list-item [routerLink]="['/']" class="sidea" >Pocetna</a>
-      <a mat-list-item class="sidea" [routerLink]="['/galerija']">Galerija</a>
-      <a mat-list-item class="sidea" [routerLink]="['/akcija']">Akcija</a>
-      <a mat-list-item class="sidea" [routerLink]="['/email']">Poruka</a>
-      
-      <a mat-list-item class="sidea" [routerLink]="['/email']">Katalozi</a>
+
+        <a mat-list-item [routerLink]="['/']" >Pocetna</a>
+        <a mat-list-item class="sidea" [routerLink]="['/galerija']">Galerija</a>
+        <a mat-list-item class="sidea" [routerLink]="['/akcija']">Akcija</a>
+        <a mat-list-item class="sidea" [routerLink]="['/email']">Poruka</a>
+
+        <a mat-list-item  [routerLink]="['/email']">Katalozi</a>
 
 
         <a mat-list-item href="#">link 1</a>
@@ -25,12 +24,15 @@
         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
             <mat-panel-title>
-              <a mat-list-item [routerLink]="['/categori']" [queryParams]="{categori:'dekorativnaRasveta', vrsta:''}" >Dekorativna rasveta</a>
+              <a mat-list-item [routerLink]="['/categori']"
+                [queryParams]="{categori:'dekorativnaRasveta', vrsta:''}">Dekorativna rasveta</a>
             </mat-panel-title>
 
           </mat-expansion-panel-header>
-          <a mat-list-item [routerLink]="['/categori']" [queryParams]="{categori:'dekorativnaRasveta',vrsta:'lusteri'}">Luster</a>
-          <a mat-list-item  [routerLink]="['/categori']" [queryParams]="{categori:'dekorativnaRasveta', vrsta:'visilice'}">Plafonjere</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'dekorativnaRasveta',vrsta:'lusteri'}">Luster</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'dekorativnaRasveta', vrsta:'visilice'}">Plafonjere</a>
 
         </mat-expansion-panel>
         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
@@ -74,7 +76,7 @@
       <a mat-list-item href="#">Link </a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content fixedInViewport >
+  <mat-sidenav-content fixedInViewport>
     <mat-toolbar color="primary" position="start">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
         <!-- *ngIf="isHandset$ | async"  -->
@@ -82,30 +84,30 @@
       </button>
       <a class="logo" [routerLink]="['/']">
         <img src="../../assets/ikoo.png" width="35px" alt="">
-      </a> 
-      <h4> <a [routerLink]="['/']" class="">  </a></h4>
+      </a>
+      <h4> <a [routerLink]="['/']" class=""> </a></h4>
       <div class="cen">
-        
-        <a mat-button [routerLink]="['/']" class="contenta title" >Pocetna</a>
+
+        <!-- <a mat-button [routerLink]="['/']" class="contenta title">Pocetna</a> -->
         <a mat-button class="contenta title" [routerLink]="['/galerija']">Galerija</a>
         <a mat-button class="contenta title" [routerLink]="['/akcija']">Akcija</a>
 
         <a mat-button class="contenta title" [routerLink]="['/email']">Poruka</a>
-        <a mat-button class="contenta title" [routerLink]="['/email']">Katalozi</a>
-
+      <!--   <a mat-button class="contenta title" [routerLink]="['/email']">Katalozi</a>
+ -->
       </div>
-      <button *ngIf="ulogovanIn()"  mat-icon-button [matMenuTriggerFor]="adminMenu">
+      <button *ngIf="ulogovanIn()" mat-icon-button [matMenuTriggerFor]="adminMenu">
         <mat-icon>support_agent</mat-icon>
       </button>
       <mat-menu class="admi" #adminMenu xPosition="before">
-        <button color="primary" mat-menu-ite mat-icon-button [routerLink]="['/inbox']"> 
-          <mat-icon  matBadgeColor="accent">inbox</mat-icon><!-- [matBadge]="inbox" -->
+        <button color="primary" mat-menu-ite mat-icon-button [routerLink]="['/inbox']">
+          <mat-icon matBadgeColor="accent">inbox</mat-icon><!-- [matBadge]="inbox" -->
         </button>
         <button color="primary" mat-menu-ite mat-icon-button [routerLink]="['/porudzbenice']">
-          <mat-icon  matBadgeColor="accent">add_shopping_cart</mat-icon><!-- [matBadge]="porudzbenica" -->
+          <mat-icon matBadgeColor="accent">add_shopping_cart</mat-icon><!-- [matBadge]="porudzbenica" -->
         </button>
         <button color="primary" mat-menu-ite mat-icon-button [routerLink]="['/profile']">
-          <mat-icon >account_box</mat-icon>
+          <mat-icon>account_box</mat-icon>
         </button>
 
       </mat-menu>
@@ -118,24 +120,32 @@
         <!-- <a mat-menu-item [routerLink]="['/addSlide']">Dodaj slide</a> -->
       </mat-menu>
 
-     
+
       <button class="shopbtn">
-        <mat-icon class="shopBadge" [routerLink]="['/shopping']" [matBadge]="countShop" matBadgeColor="accent">shopping_cart</mat-icon>
+        <mat-icon class="shopBadge" [routerLink]="['/shopping']" [matBadge]="countShop" matBadgeColor="accent">
+          shopping_cart</mat-icon>
       </button>
-      <form (ngSubmit)="search()" class="search" action="" style="margin-right: 5%;">
-        <input class="inputsearch"  type="text" [(ngModel)]="searchText" name="searchText" placeholder="Search">
-        <button type="submit" matSuffix mat-icon-button><mat-icon>search</mat-icon></button>
-      </form> 
+      <form (ngSubmit)="search()" class="search" action="">
+        <input class="inputsearch" type="text" [(ngModel)]="searchText" name="searchText" placeholder="Search">
+        <button type="submit" matSuffix mat-icon-button>
+          <mat-icon>search</mat-icon>
+        </button>
+      </form>
 
 
-      <button *ngIf="!ulogovanIn()" mat-mini-fab color="primary"class="logbtn" [routerLink]="['/login']">
+      <button *ngIf="!ulogovanIn()" mat-mini-fab color="primary" class="logbtn" [routerLink]="['/login']">
         <mat-icon>account_circle</mat-icon>
       </button>
-      <button *ngIf="ulogovanIn()"  color="warn" class="logbtn" mat-mini-fab (click)="logout()" ><mat-icon>exit_to_app</mat-icon></button>
+      <button *ngIf="ulogovanIn()" color="warn" class="logbtn" mat-mini-fab (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
     </mat-toolbar>
-   
-      <router-outlet></router-outlet>
-    
-    <app-footer></app-footer>
+<div class="maincontent">
+    <router-outlet></router-outlet>
+  </div>
+
+    <div class="footer">
+      <app-footer></app-footer>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
