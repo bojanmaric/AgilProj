@@ -90,7 +90,7 @@ router.post('/email', (req, res, next) => {
 
 })
 
-router.delete('/deletePoruku/:id',(req,res)=>{
+router.delete('/deletePoruku/:id',authenticate,(req,res)=>{
 
   Porudzbina.deletePoruku(req.params.id.toString(),(err)=>{
     if(err){
@@ -100,7 +100,7 @@ router.delete('/deletePoruku/:id',(req,res)=>{
     }
   })
 })
-router.get('/poruke', (req, res, next) => {
+router.get('/poruke',authenticate, (req, res, next) => {
 
   Porudzbina.getAllPorudzbine(req.query,(err,poruke)=>{
     if(err){
@@ -113,7 +113,7 @@ router.get('/poruke', (req, res, next) => {
 
 })
 
-router.get('/poruke/:id',(req,res)=>{
+router.get('/poruke/:id',authenticate,(req,res)=>{
   Porudzbina.getPorukuByID(req.params.id,(err,poruka)=>{
     if(err){
       res.json({success:false, msg:'Greska prilikom pretrage poruke'})

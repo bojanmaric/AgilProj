@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const nodemailer = require('nodemailer');
 const Shop = require('../models/shop');
+const authenticate=require('../config/authenticate')
 
 
 router.post('/shop', (req, res) => {
@@ -74,7 +75,7 @@ router.post('/shop', (req, res) => {
   })
 })
 
-router.get('/shop',(req,res)=>{
+router.get('/shop',authenticate,(req,res)=>{
 
   Shop.getPorudzbenice(req.query, (err,porudzbenice)=>{
 
@@ -86,7 +87,7 @@ router.get('/shop',(req,res)=>{
   });
 })
 
-router.delete('/deletePorudzbinu/:id',(req,res)=>{
+router.delete('/deletePorudzbinu/:id',authenticate,(req,res)=>{
 
   Shop.deleteShop(req.params.id.toString(),(err)=>{
     if(err){
@@ -96,7 +97,7 @@ router.delete('/deletePorudzbinu/:id',(req,res)=>{
     }
   })
 })
-router.get('/shop/:id',(req,res)=>{
+router.get('/shop/:id',authenticate,(req,res)=>{
 
   Shop.getPorudzbenicuByID(req.params.id.toString(),(err,porudzbina)=>{
 
@@ -110,23 +111,6 @@ router.get('/shop/:id',(req,res)=>{
 
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

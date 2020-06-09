@@ -26,7 +26,7 @@ var upload=multer({
     storage:storage
 })
 
-router.post('/addArtikal',upload.single('file'), function(req,res,next){
+router.post('/addArtikal',upload.single('file'),authenticate, function(req,res,next){
     
 
     let arti =new Artikal( JSON.parse( req.body.artikal));
@@ -41,7 +41,7 @@ router.post('/addArtikal',upload.single('file'), function(req,res,next){
     })
 
 });
-router.put('/:id', function(req,res){
+router.put('/:id',authenticate, function(req,res){
 
 
     let data={
@@ -122,7 +122,7 @@ router.get('/image/:image',(req,res)=>{
 
 });
 
-router.delete('/:id',(req,res)=>{
+router.delete('/:id',authenticate,(req,res)=>{
 
   
    

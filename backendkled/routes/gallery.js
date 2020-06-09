@@ -5,6 +5,7 @@ const Gallery=require('../models/gallery');
 const fs=require('fs');
 const path=require('path');
 const crypto=require('crypto');
+const authenticate=require('../config/authenticate')
 
 
 var storage=mutler.diskStorage({
@@ -23,7 +24,7 @@ var upload=mutler({
   storage:storage
 })
 
-router.post('/add', upload.single('file'),function(req,res,next){
+router.post('/add', upload.single('file'),authenticate,function(req,res,next){
     console.log(req.body.filename)
 
  let slika= new Gallery({
