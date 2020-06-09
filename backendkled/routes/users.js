@@ -26,7 +26,8 @@ router.post('/email', (req, res, next) => {
     imePosiljaoca: req.body.imePosiljaoca,
     kontaktPosiljaoca: req.body.kontaktPosiljaoca,
     emailPosiljaoca: req.body.emailPosiljaoca,
-    sadrzaj: req.body.sadrzaj
+    sadrzaj: req.body.sadrzaj,
+    datum:req.body.datum
   }
   
   let por= new Porudzbina(porudzbina);
@@ -89,6 +90,37 @@ router.post('/email', (req, res, next) => {
 
 })
 
+router.delete('/deletePoruku/:id',(req,res)=>{
 
+  Porudzbina.deletePoruku(req.params.id.toString(),(err)=>{
+    if(err){
+      res.json({success:false, msg:'Greska prilikom brisanja'})
+    }else{
+      res.json({success:true,msg:'Uspesno obrisana poruka'})
+    }
+  })
+})
+router.get('/poruke', (req, res, next) => {
+
+  Porudzbina.getAllPorudzbine(req.query,(err,poruke)=>{
+    if(err){
+      res.json({success:false,msg:'Greska prilikom slanja zahteva'})
+    }else{
+      res.json({poruke:poruke})
+    }
+  })
+
+
+})
+
+router.get('/poruke/:id',(req,res)=>{
+  Porudzbina.getPorukuByID(req.params.id,(err,poruka)=>{
+    if(err){
+      res.json({success:false, msg:'Greska prilikom pretrage poruke'})
+    }else{
+      res.json({poruka:poruka})
+    }
+  })
+})
 
 module.exports = router;

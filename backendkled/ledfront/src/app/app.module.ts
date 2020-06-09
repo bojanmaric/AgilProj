@@ -33,6 +33,10 @@ import { ShopComponent } from './components/dialogs/shop/shop.component';
 import { GalleryService } from './servisi/gallery.service';
 import { GalerijaComponent } from './components/galerija/galerija.component';
 import { ArtikalComponent } from './components/home/artikal/artikal.component';
+import { ProfileComponent } from './admin/profile/profile.component';
+import { InboxComponent } from './admin/inbox/inbox.component';
+import { PorudzbineComponent } from './admin/porudzbine/porudzbine.component';
+import { AkcijaComponent } from './components/akcija/akcija.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,11 @@ import { ArtikalComponent } from './components/home/artikal/artikal.component';
     EmailsComponent,
     ShopComponent,
     GalerijaComponent,
-    ArtikalComponent
+    ArtikalComponent,
+    ProfileComponent,
+    InboxComponent,
+    PorudzbineComponent,
+    AkcijaComponent
   ],
   imports: [
     BrowserModule,

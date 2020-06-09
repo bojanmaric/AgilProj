@@ -11,6 +11,20 @@ mat-card-content{
     grid-template-columns: repeat(2,1fr);
     
 }
+
+mat-card .akcija{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+}
+.akcija img{
+    width: 100%;
+}
+.popust{
+    text-decoration-line: line-through;
+    font-size: 13px!important;
+}
 mat-card-content h3{
     width: 100%;
     margin: auto;
@@ -26,7 +40,6 @@ mat-card-content button{
 }
 mat-card img{
     
-    width: 100%;
     transition: .7s;
     height: auto;
 

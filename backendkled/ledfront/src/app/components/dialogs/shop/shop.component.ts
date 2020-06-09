@@ -19,7 +19,7 @@ import { ArtShop } from 'src/app/model/ArtShop';
 export class ShopComponent implements OnInit {
 
   public ruta = "http://localhost:3000/artikal/image/";
-  
+
   showSpiner = false;
   constructor(private emailService: EmailsService, private artiService: ArtikalService,
     public dialogRef: MatDialogRef<ShopComponent>,
@@ -37,9 +37,11 @@ export class ShopComponent implements OnInit {
     adresaKupca: ['', [Validators.required]],
     kontaktKupca: ['', [Validators.required]],
     emailKupca: ['', [Validators.email]],
+
+    datum: [Date.now()],
     artikli: this.fb.array([
-      
-    ],[Validators.required])
+
+    ], [Validators.required])
   })
   artikliAdd() {
 
@@ -52,10 +54,10 @@ export class ShopComponent implements OnInit {
   }
   punjenjeArt() {
     const artikli = <FormArray>this.kupacPodaci.get('artikli');
-    
-    for(var i in this.artikli){
-      
-     var arti=this.fb.group({
+
+    for (var i in this.artikli) {
+
+      var arti = this.fb.group({
 
         nazivArtikla: [this.artikli[i].nazivArtikla],
         cenaArtikla: [this.artikli[i].cenaArtikla],
@@ -74,14 +76,14 @@ export class ShopComponent implements OnInit {
 
     this.punjenjeArt();
 
-    
+
     if (this.kupacPodaci.valid) {
 
-      this.showSpiner=true;
-      
+      this.showSpiner = true;
+
       this.emailService.sendPoruddzbina(this.kupacPodaci.value).subscribe(
         res => {
-          this.showSpiner=false;
+          this.showSpiner = false;
 
           if (res['success'] === true) {
             this.snackBar.open('Uspesno ste poslali zahtev', 'Uredu', { duration: 3000 })
@@ -90,7 +92,7 @@ export class ShopComponent implements OnInit {
             this.snackBar.open('Greska prilikom slanja porudzbine', 'Uredu', { duration: 3000 })
           }
         }, error => {
-          this.showSpiner=false;
+          this.showSpiner = false;
 
           this.snackBar.open('Greska prilikom slanja porudzbine na serveru', 'Uredu', { duration: 3000 })
         }

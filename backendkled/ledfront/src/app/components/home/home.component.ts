@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
   artikli: Array<Artikal>;
   akcijski: Array<Artikal>;
   p: any;
+  ulogovan=false;
   constructor(config: NgbCarouselConfig,
     private artiService: ArtikalService,
     private router: Router,
@@ -37,6 +38,8 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit(): void {
     this.loadData();
+
+    this.ulogovan=this.logiService.isLogged();
 
   }
 
@@ -103,7 +106,8 @@ export class HomeComponent implements OnInit {
   }
 
   addShop(art){
-     this.artiService.addShop(art);
+     this.artiService.addShop(art,1);
+     this.snacBar.open('Uspesno dodato','Uredu',{duration:500})
   }
 
 }

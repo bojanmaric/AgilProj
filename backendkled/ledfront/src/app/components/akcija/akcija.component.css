@@ -1,0 +1,88 @@
+
+.proizvodi{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+mat-card-content{
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    
+}
+mat-card-content h3{
+    width: 100%;
+    margin: auto;
+    
+    font-weight: 500;
+    font-size: 20px;
+    color: #a47a06;
+}
+mat-card-title button{
+    
+    margin-left: 50%;
+   outline: none;
+   transition: .6s;
+}
+mat-card-title button:hover{
+    color: #68049d;
+    background: #dcdcdc;
+
+}
+mat-card img{
+    
+    transition: .7s;
+    height: auto;
+
+}
+mat-card .akcija{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+}
+.akcija img{
+    width: 100%;
+}
+.popust{
+    text-decoration-line: line-through;
+    font-size: 13px!important;
+}
+mat-card .img:hover,
+    mat-card img:focus{
+    transform: scale(1.2);
+}
+
+mat-card-title{
+    text-align: center;
+    font-size: 13px!important;
+    text-transform: uppercase;
+    color: rgb(74, 150, 255);
+   
+}
+mat-card{
+    width: 200px;
+   position: relative;
+    margin: 1rem .5rem ;
+    overflow: hidden;
+   
+    
+}
+mat-card-actions{
+  text-align: center;
+}
+mat-card-actions button{
+    
+    
+    border: none;
+    outline: none;
+}
+
+@media screen  and (max-width:480px){
+   mat-card{
+       margin: .3rem auto;
+       width: 90%;
+   }
+}

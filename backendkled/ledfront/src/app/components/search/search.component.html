@@ -8,14 +8,16 @@
     <div *ngFor="let art of artsear">
       <mat-card>
        
-        <img  mat-card-image [src]="getImage(art.srcSlika)" alt="">
+        <img  mat-card-image (click)="openArtikal(art)" [src]="getImage(art.srcSlika)" alt="">
         <mat-card-content>
           <h3>{{art.cenaArtikla}}.00</h3>
-          <button mat-mini-fab (click)="addShop(art)"  ><mat-icon>shopping_basket</mat-icon></button>
-        </mat-card-content>
-        <mat-card-title>{{art.nazivArtikla}} &nbsp; {{art.sifraArtikla}}</mat-card-title>
          
-        <mat-card-actions>
+        </mat-card-content>
+        <mat-card-title>{{art.nazivArtikla}} &nbsp; {{art.sifraArtikla}} </mat-card-title>
+        <button   mat-stroked-button color="accent" (click)="addShop(art)" style="width: 100%; outline: none;" ><mat-icon>shopping_basket</mat-icon></button>
+         
+         
+        <mat-card-actions *ngIf="ulogovanIn()">
           <button mat-raised-button color="primary" (click)="editArt(art)">EDIT</button>
           <button mat-raised-button color="warn" (click)="deleteArt(art)"> DELETE</button>
         </mat-card-actions>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ArtikalService } from 'src/app/servisi/artikal.service';
 import { Observable } from 'rxjs';
 import { filter, find } from 'rxjs/operators'
@@ -16,7 +16,7 @@ import{EditArtDialogComponent} from '../dialogs/edit-art-dialog/edit-art-dialog.
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private router: ActivatedRoute, private artiService: ArtikalService,private logiService: LoginService,
+  constructor(private router: ActivatedRoute,private route:Router, private artiService: ArtikalService,private logiService: LoginService,
     private snacBar: MatSnackBar,
     public dialog:MatDialog) { }
 
@@ -58,13 +58,22 @@ export class SearchComponent implements OnInit {
   
 
   addShop(art){
-    this.artiService.addShop(art);
+    this.artiService.addShop(art,1);
  }
 
   getImage(art) {
 
     return this.putanja + art;
   }
+
+  
+  openArtikal(art){
+
+    this.route.navigate(['/artikal/'+art._id]);
+
+
+  }
+
 
   deleteArt(art) {
     this.showSpiner = true;
@@ -100,6 +109,12 @@ export class SearchComponent implements OnInit {
           this.loadData();
         }
       })
+    }
+    ulogovanIn() {
+      if (this.logiService.isLogged()) {
+        return true;
+      }
+      return false;
     }
 
 

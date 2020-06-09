@@ -63,7 +63,7 @@ const ArtikalShema=mongoose.Schema({
     },
     akcija:{
         type:Boolean,
-        default:'no'
+        default:false
     }, 
     popust:{
         type:Number,
@@ -82,6 +82,10 @@ module.exports.getArtikalById=function(id, callback){
 
 module.exports.addArtikal=function(artikal,callback){
     artikal.save(callback);
+}
+module.exports.getAkcijaArtikal=function(akcija,callback){
+    query={'akcija':true}
+    Artikal.find(query,callback)
 }
 module.exports.getAllArtikle=function(query,callback){
     Artikal.find(query).populate().exec(callback);

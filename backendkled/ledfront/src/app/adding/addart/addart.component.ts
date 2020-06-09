@@ -18,7 +18,7 @@ export class AddartComponent implements OnInit {
 
   srcSlika: string;
 
-
+  pokazi = false;
   artikal = this.fb.group({
     nazivArtikla: ['', [Validators.required]],
     sifraArtikla: ['', [Validators.required]],
@@ -40,7 +40,7 @@ export class AddartComponent implements OnInit {
     popust: [0]
   });
   constructor(private fb: FormBuilder, private artiService: ArtikalService, private _snackBar: MatSnackBar) { }
-  showSpiner = false;
+ 
 
   ngOnInit(): void {
     document.querySelector('body').scrollTo(0, 0)
@@ -57,16 +57,16 @@ export class AddartComponent implements OnInit {
 
   add() {
     if (this.artikal.valid) {
-      console.log(this.artikal.value);
+      
    
-      this.showSpiner = true;
+      this.pokazi = true;
       this.artiService.addArtikal(this.artikal,this.slika).subscribe(
         res=>{
-          this.showSpiner=false;
+          this.pokazi=false;
           this._snackBar.open('Uspešno dodat artikal', 'Close', { duration: 2500 });
       },
       error=>{
-        this.showSpiner=false;
+        this.pokazi=false;
         this._snackBar.open('Greska', 'Close', { duration: 2500 });
 
       }
@@ -74,7 +74,7 @@ export class AddartComponent implements OnInit {
       );
 
     } else {
-      this.showSpiner=false;
+      
       this._snackBar.open('Greska', 'Close', { duration: 2500 });
     }
 

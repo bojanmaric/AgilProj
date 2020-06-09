@@ -1,0 +1,32 @@
+<div class="porudzbine">
+    <mat-accordion>
+        <div *ngFor="let porudzbina of porudzbine">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <button mat-icon-button color="warn" (click)="brisiPorudzbinu(porudzbina)"style="outline: none;">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        {{porudzbina.imeKupca }} &nbsp; {{porudzbina.datum}}</mat-panel-title>
+                    <mat-panel-description>Kontakt: {{porudzbina.kontaktKupca}}</mat-panel-description>
+
+                </mat-expansion-panel-header>
+                <h3> Adresa: {{porudzbina.adresaKupca}}</h3>
+                <h3>Email: {{porudzbina.emailPosiljaoca}}</h3>
+                <div *ngFor="let art of porudzbina.artikli">
+                    <h3 class="text-primary">
+                        <span>{{art.nazivArtikla}}</span>
+                        <span>{{art.sifraArtikla}}</span>
+
+                        <span class="text-success">{{art.cenaArtikla}}.00 din.</span>
+                        <span>{{art.kolicina}} komada</span>
+                        <span class="text-success">{{art.ukupno}}.00 din.</span>
+                    </h3>
+                <mat-divider></mat-divider>
+                </div>
+            </mat-expansion-panel>
+            
+
+        </div>
+    </mat-accordion>
+</div>

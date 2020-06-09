@@ -1,0 +1,26 @@
+<div class="inbox">
+    <mat-accordion>
+        <div *ngFor="let poruka of poruke">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+
+                    <mat-panel-title>
+                        <button mat-icon-button color="warn" (click)="brisiPoruku(poruka)" style="outline: none;">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        {{poruka.imePosiljaoca}} {{poruka.datum}}</mat-panel-title>
+                    <mat-panel-description>email: {{poruka.emailPosiljaoca}}</mat-panel-description>
+                </mat-expansion-panel-header>
+                <h3>Adresa: {{poruka.kontaktPosiljaoca}}</h3>
+                <div class="sadrzaj">
+                    {{poruka.sadrzaj}}
+                </div>
+            </mat-expansion-panel>
+
+        </div>
+    </mat-accordion>
+
+
+
+
+</div>

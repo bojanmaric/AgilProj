@@ -1,4 +1,5 @@
-<div class="shopping ">
+
+<div *ngIf="ima>0"  class="shopping ">
     <table>
         <tr>
             <th>
@@ -33,9 +34,10 @@
     </table>
 
     <button class="center"  mat-raised-button color="primary" (click)="shopArtikle()"> Pošaljite zahtev</button>
-    <button class="float-right" mat-raised-button color="warn"> Izbriši porudzbinu</button>
+    <button class="float-right" mat-raised-button color="warn" (click)="brisiPorudz()"> Izbriši porudzbinu</button>
 
-
-
+</div>
+<div *ngIf="ima==0">
+    <h1 style="text-align: center; margin: 3rem 0;" class="text-danger">Niste dodali ni jedan artikal u korpu</h1>
 
 </div>

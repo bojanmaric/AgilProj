@@ -13,8 +13,6 @@ export class AuthGuard implements CanActivate {
   constructor(private loginService:LoginService, private router:Router){
 
   }
-
-
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean{

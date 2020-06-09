@@ -1,0 +1,38 @@
+<div style="margin: 1rem;"></div>
+  <div class="container-fluid">
+    <h1 class="text-primary">Akcijski proizvodi</h1>
+    <hr>
+
+    <pagination-controls class="text-center myPagination" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
+      maxSize="5"> </pagination-controls>
+    <div class="proizvodi">
+
+      <div *ngFor="let art of artikli |paginate:{ 
+        itemsPerPage:20, 
+        currentPage: p}">
+        <mat-card>
+         
+          <img (click)="openArtikal(art)" class="img"  mat-card-image [src]="getImage(art.srcSlika)" alt="">
+          <div class="akcija">
+            <img *ngIf="art.akcija" src="../../../../assets/akcija.png" alt="">
+        </div>
+          <mat-card-content>
+            <h3 class="popust  text-danger"  *ngIf="art.popust > 0">  {{(art.cenaArtikla + (art.cenaArtikla*(art.popust/(100-art.popust)))) | number:'' }}</h3>
+            <h3>{{art.cenaArtikla | number:''}}.00</h3>
+           
+          </mat-card-content>
+            
+          <mat-card-title>{{art.nazivArtikla}} &nbsp; {{art.sifraArtikla}} </mat-card-title>
+          <button   mat-stroked-button color="accent" (click)="addShop(art)" style="width: 100%; outline: none;" >
+            <mat-icon>shopping_basket</mat-icon>
+          </button>
+        
+         
+        </mat-card>
+      </div>
+
+    </div>
+
+    <pagination-controls class="text-center myPagination" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
+      maxSize="5"> </pagination-controls>
+  </div>

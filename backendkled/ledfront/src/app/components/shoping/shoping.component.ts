@@ -6,6 +6,7 @@ import { ArtShop } from 'src/app/model/ArtShop';
 import { EmailsService } from 'src/app/servisi/emails.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ShopComponent } from '../dialogs/shop/shop.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shoping',
@@ -16,17 +17,16 @@ export class ShopingComponent implements OnInit {
 
   public ruta="http://localhost:3000/artikal/image/"
   constructor(private artiSrvice:ArtikalService, 
-    private dialog:MatDialog,private snackBar:MatSnackBar, private emailService:EmailsService) { }
+    private dialog:MatDialog,private snackBar:MatSnackBar, private emailService:EmailsService, private router:Router) { }
 
   artikli:Array<ArtShop>=new Array<ArtShop>();
+  ima=0;
   ngOnInit(): void {
-    this.loaddata();
+    this.loaddata(); 
   }
-
-
   loaddata(){
       this.artikli=this.artiSrvice.shop();
-      console.log(this.artikli)
+      this.ima=this.artikli.length;
   }
   brisiShop(art){
 
@@ -47,6 +47,11 @@ export class ShopingComponent implements OnInit {
 
   }
 
+  brisiPorudz(){
+    this.artiSrvice.brisiShop();
+    this.router.navigate(['/'])
+    
+  }
   getImage(art){
     return this.ruta+art;
   }

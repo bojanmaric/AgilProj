@@ -9,9 +9,9 @@
         <h1 class="text-uppercase">{{artikal.nazivArtikla}}</h1>
 
         <h4>{{artikal.sifraArtikla}}</h4>
-        <h2 class="popust  text-danger" *ngIf="artikal.popust">
-            {{artikal.cenaArtikla + (artikal.cenaArtikla*(artikal.popust/(100-artikal.popust))) }}.00 din.</h2>
-        <h1><span class="text-success"> {{artikal.cenaArtikla}}.00 din. </span></h1>
+        <h2 class="popust  text-danger" *ngIf="artikal.popust > 0">
+            {{(artikal.cenaArtikla + (artikal.cenaArtikla*(artikal.popust/(100-artikal.popust)))) | number:'' }} din.</h2>
+        <h1><span class="text-success"> {{artikal.cenaArtikla | number:''}}.00 din. </span></h1>
         <div class="opisArtikla">
             <h2 *ngIf="artikal.jacina"> Jačina <span class="float-right text-success">{{artikal.jacina}} </span></h2>
             <h2 *ngIf="artikal.tipGrla">Tip grla <span class="float-right text-success">{{artikal.tipGrla}}</span></h2>
@@ -35,7 +35,7 @@
                 <span (click)="minus()">-</span>
                 <input type="number" [(ngModel)]="kolicina">
                 <span (click)="plus()">+</span>
-                <button  mat-raised-button class="dodajBtn float-right"> Dodaj u korpu</button>
+                <button  mat-raised-button class="dodajBtn float-right" (click)="addShop(artikal)"> Dodaj u korpu</button>
             </div>
           
         </div>

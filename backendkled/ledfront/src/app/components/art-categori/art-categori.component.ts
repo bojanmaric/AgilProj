@@ -26,7 +26,7 @@ export class ArtCategoriComponent implements OnInit {
 
   public putanja = "http://localhost:3000/artikal/image/";
 
-  constructor(private route: ActivatedRoute,private router:Router, private artiService: ArtikalService, private logiService: LoginService,
+  constructor(private route: ActivatedRoute,private router:Router, private artiService: ArtikalService, private logingService: LoginService,
     private snacBar: MatSnackBar,
     public dialog: MatDialog) { }
 
@@ -56,6 +56,15 @@ export class ArtCategoriComponent implements OnInit {
     
 
   }
+
+  
+  openArtikal(art){
+
+    this.router.navigate(['/artikal/'+art._id]);
+
+
+  }
+
   
   deleteArt(art) {
  
@@ -97,7 +106,9 @@ export class ArtCategoriComponent implements OnInit {
   }
 
   addShop(art){
-     this.artiService.addShop(art);
+     this.artiService.addShop(art,1);
+    this.snacBar.open('Uspesno dodato','Uredu',{duration:500})
+
   }
 
 
@@ -113,4 +124,10 @@ export class ArtCategoriComponent implements OnInit {
    
   }
 
+  ulogovanIn() {
+    if (this.logingService.isLogged()) {
+      return true;
+    }
+    return false;
+  }
 }

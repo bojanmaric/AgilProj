@@ -20,6 +20,9 @@ mat-nav-list a{
   text-transform: uppercase;
   
 }
+mat-menu.admi {
+  outline: none;
+}
 
 mat-sidenav-content mat-toolbar button{
   outline: none;
@@ -164,22 +167,24 @@ h4 a{
   mat-toolbar h4 a:hover{
     color: rgb(187, 187, 187);
   }
+  .inputsearch{
+    width: 70px;
+  }
+  .inputsearch:focus{
+    width:90px;
+    padding-left:10px;
+    margin-left: 0;
+    
+  }
+  .logbtn{
+    margin-left: 0;
+    padding-left: 3px;
+  }
 }
 
 @media screen and (max-width:480px){
   /*a.title{
     display: none;
   }*/
-  .inputsearch{
-    width: 90px;
-  }
-  .inputsearch:focus{
-    width: 110px;
-    padding-left:10px;
-    margin-left: 0;
-    
-  }
-  /*.logbtn{
-    padding-left: 5px;
-  }*/
+ 
 }

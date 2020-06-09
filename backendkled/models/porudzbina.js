@@ -19,6 +19,10 @@ const PorudzbinaShema=mongoose.Schema({
     sadrzaj:{
         type:String,
         require:true
+    },
+    datum:{
+        type:Date,
+        require:true
     }
     
 
@@ -32,5 +36,13 @@ module.exports.addPorudzbina=function(porudzbina, callback){
 }
 module.exports.getAllPorudzbine=function(query,callback){
     Porudzbina.find(query).populate().exec(callback)
+}
+module.exports.deletePoruku=function(id,callback){
+    var query={_id:id};
+    Porudzbina.findByIdAndRemove(query, callback);
+
+}
+module.exports.getPorukuByID=function(id,callback){
+    Porudzbina.findById(id, callback);
 }
 

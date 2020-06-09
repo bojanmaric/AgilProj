@@ -1,0 +1,7 @@
+div span{
+    margin-left: 5%;
+}
+mat-expansion-panel{
+    width: 80%;
+    margin: 15px auto;
+}

@@ -33,7 +33,7 @@
     </ng-template>
   </ngb-carousel>
   <div style="margin: 1rem;"></div>
-  <div class="container-fluid">
+  <div class="container">
     <h1 class="text-primary">Akcijski proizvodi</h1>
     <hr>
 
@@ -49,14 +49,20 @@
         currentPage: p}">
         <mat-card>
          
-          <img (click)="openArtikal(art)"  mat-card-image [src]="getImage(art.srcSlika)" alt="">
+          <img (click)="openArtikal(art)" class="img"  mat-card-image [src]="getImage(art.srcSlika)" alt="">
+          <div class="akcija">
+            <img *ngIf="art.akcija" src="../../../../assets/akcija.png" alt="">
+        </div>
           <mat-card-content>
-            <h3>{{art.cenaArtikla}}.00</h3>
-            <button  mat-icon-button color="accent" (click)="addShop(art)" ><mat-icon>shopping_basket</mat-icon></button>
-          </mat-card-content>
-          <mat-card-title>{{art.nazivArtikla}} &nbsp; {{art.sifraArtikla}}</mat-card-title>
+            <h3 class="popust  text-danger"  *ngIf="art.popust > 0">  {{(art.cenaArtikla + (art.cenaArtikla*(art.popust/(100-art.popust)))) | number:'' }}</h3>
+            <h3>{{art.cenaArtikla | number:''}}.00</h3>
            
-          <mat-card-actions>
+          </mat-card-content>
+          
+          <button   mat-stroked-button color="accent" (click)="addShop(art)" style="width: 100%; outline: none;" >
+            <mat-icon>shopping_basket</mat-icon>
+          </button>  
+          <mat-card-actions *ngIf="ulogovan">
             <button mat-raised-button color="primary" (click)="editArt(art)">EDIT</button>
             <button mat-raised-button color="warn" (click)="deleteArt(art)"> DELETE</button>
           </mat-card-actions>

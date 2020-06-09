@@ -14,8 +14,11 @@
         
       <a mat-list-item [routerLink]="['/']" class="sidea" >Pocetna</a>
       <a mat-list-item class="sidea" [routerLink]="['/galerija']">Galerija</a>
-      <a mat-list-item class="sidea" href="#">Admin</a>
+      <a mat-list-item class="sidea" [routerLink]="['/akcija']">Akcija</a>
       <a mat-list-item class="sidea" [routerLink]="['/email']">Poruka</a>
+      
+      <a mat-list-item class="sidea" [routerLink]="['/email']">Katalozi</a>
+
 
         <a mat-list-item href="#">link 1</a>
 
@@ -77,24 +80,42 @@
         <!-- *ngIf="isHandset$ | async"  -->
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-     <!--  <a class="logo" [routerLink]="['/']">
+      <a class="logo" [routerLink]="['/']">
         <img src="../../assets/ikoo.png" width="35px" alt="">
-      </a> -->
+      </a> 
       <h4> <a [routerLink]="['/']" class="">  </a></h4>
       <div class="cen">
         
         <a mat-button [routerLink]="['/']" class="contenta title" >Pocetna</a>
-        <a mat-button class="contenta title" [routerLink]="['/galerija']">Galeri</a>
-        <a mat-button class="contenta title" href="#">Admin</a>
+        <a mat-button class="contenta title" [routerLink]="['/galerija']">Galerija</a>
+        <a mat-button class="contenta title" [routerLink]="['/akcija']">Akcija</a>
+
         <a mat-button class="contenta title" [routerLink]="['/email']">Poruka</a>
+        <a mat-button class="contenta title" [routerLink]="['/email']">Katalozi</a>
+
       </div>
-      <button mat-button [matMenuTriggerFor]="belowMenu">
+      <button *ngIf="ulogovanIn()"  mat-icon-button [matMenuTriggerFor]="adminMenu">
+        <mat-icon>support_agent</mat-icon>
+      </button>
+      <mat-menu class="admi" #adminMenu xPosition="before">
+        <button color="primary" mat-menu-ite mat-icon-button [routerLink]="['/inbox']"> 
+          <mat-icon  matBadgeColor="accent">inbox</mat-icon><!-- [matBadge]="inbox" -->
+        </button>
+        <button color="primary" mat-menu-ite mat-icon-button [routerLink]="['/porudzbenice']">
+          <mat-icon  matBadgeColor="accent">add_shopping_cart</mat-icon><!-- [matBadge]="porudzbenica" -->
+        </button>
+        <button color="primary" mat-menu-ite mat-icon-button [routerLink]="['/profile']">
+          <mat-icon >account_box</mat-icon>
+        </button>
+
+      </mat-menu>
+      <button *ngIf="ulogovanIn()" mat-icon-button [matMenuTriggerFor]="belowMenu">
         <mat-icon>add_circle_outline</mat-icon>
       </button>
       <mat-menu #belowMenu="matMenu" xPosition="before">
         <a mat-menu-item [routerLink]="['/addArtical']">Dodaj Artikal</a>
         <a mat-menu-item [routerLink]="['/addGallery']">Dodaj u galeriju</a>
-        <a mat-menu-item [routerLink]="['/addSlide']">Dodaj slide</a>
+        <!-- <a mat-menu-item [routerLink]="['/addSlide']">Dodaj slide</a> -->
       </mat-menu>
 
      

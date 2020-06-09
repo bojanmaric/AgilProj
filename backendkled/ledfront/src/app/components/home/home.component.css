@@ -36,13 +36,13 @@ mat-card-content h3{
     font-size: 20px;
     color: #a47a06;
 }
-mat-card-content button{
+mat-card-title button{
     
     margin-left: 50%;
    outline: none;
    transition: .6s;
 }
-mat-card-content button:hover{
+mat-card-title button:hover{
     color: #68049d;
     background: #dcdcdc;
 
@@ -53,7 +53,20 @@ mat-card img{
     height: auto;
 
 }
-mat-card img:hover,
+mat-card .akcija{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+}
+.akcija img{
+    width: 100%;
+}
+.popust{
+    text-decoration-line: line-through;
+    font-size: 13px!important;
+}
+mat-card .img:hover,
     mat-card img:focus{
     transform: scale(1.2);
 }
@@ -67,7 +80,7 @@ mat-card-title{
 }
 mat-card{
     width: 200px;
-   
+   position: relative;
     margin: 1rem .5rem ;
     overflow: hidden;
    

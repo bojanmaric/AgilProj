@@ -21,8 +21,6 @@ var storage = multer.diskStorage({
             cb(null, raw.toString('hex') + Date.now() + '.' + ext);
         });
     }
-
-
 }); 
 var upload=multer({
     storage:storage
@@ -89,6 +87,18 @@ router.get('/getAll',function(req,res,next){
     })
 
 });
+router.get('/akcija',(req,res)=>{
+
+    Artikal.getAkcijaArtikal(true,(err,artikli)=>{
+        if(err){
+            res.json({success:false, msg:'greska prilikom slanja zahteva'})
+        }else{
+            res.json({artikli:artikli})
+        }
+    })
+
+
+})
 router.get('/getArt/:id',(req,res)=>{
 
     console.log(req.params.id)
