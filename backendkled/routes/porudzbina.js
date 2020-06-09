@@ -46,8 +46,8 @@ router.post('/shop', (req, res) => {
 
         service: 'gmail',
         auth: {
-          user: 'ledmasterweb@gmail.com', // generated ethereal user
-          pass: 'Divcibare.014'
+          user: 'user', // generated ethereal user
+          pass: 'password'
         }
       });
 
