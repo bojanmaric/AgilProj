@@ -5,7 +5,7 @@
   
 }
 
-a.sidea{
+.linksA .sidea{
   display: none;
 }
 
@@ -20,6 +20,37 @@ mat-nav-list a{
   text-transform: uppercase;
   
 }
+.mobilni{
+  display: none;
+}
+.notMobilni{
+  display: initial;
+}
+.searchMobile{
+  display: none;
+  z-index: 1;
+  background-color: rgb(241, 241, 241);
+  width: 100%;
+  position: absolute;
+  position: fixed;
+  top: auto;
+}
+.searMobile{
+  display: none;
+}
+.searchMobile form mat-form-field{
+  border: none;
+  width: 100%;
+  text-align: center;
+}
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+.searchMobile form mat-form-field button{
+  border-radius: 0;
+ 
+}
+
 mat-menu.admi {
   outline: none;
 }
@@ -53,9 +84,10 @@ mat-expansion-panel-header{
 
 mat-sidenav{
   background: url('../../assets/visilica-trivia-340-e-27-3x40w-brilight.png') no-repeat , rgb(241, 241, 241);
-  background-position: center;
+ background-position: center;
   box-shadow: 3px 0 6px rgba(0, 0, 0, .24) ;
   border: none;
+  
 
   
 }
@@ -63,9 +95,20 @@ mat-sidenav-content{
   z-index: 1;
   right: 0;
   left: 0;
-  
-  
   position: fixed;
+  position: relative;
+}
+.linksA {
+  width: 100%;
+  
+}
+.linksA a{
+  display: block;
+  text-align: left;
+  padding:3px 20px;
+  border-radius: 0;
+  height: auto;
+
 
 }
 
@@ -82,7 +125,7 @@ a.contenta{
   text-align: center;
 }
 mat-sidenav  mat-nav-list{
-  opacity: .95;
+  opacity: .90;
   
 }
 
@@ -97,11 +140,7 @@ mat-sidenav  mat-nav-list{
   justify-content: center;
   
 }
-/*.logbtn{
-  text-align: center;
-  padding: 12px 0 5px 35px;
-  color: #fff;
-}*/
+
 .inputsearch{
   border-radius: 3rem;
   border: none;
@@ -157,15 +196,25 @@ h4 a{
   margin-left: 10px;
 }
 @media screen and (max-width:768px){
-  a.sidea{
+  .linksA .sidea{
+    display: block;
+    
+  }
+  .activeSearch{
     display: initial;
+  }
+  .searMobile{
+    display: initial;
+  }
+  .search{
+    display: none;
   }
   a.contenta{
     display: none;
   }
   mat-toolbar h4 a{
     display: initial ;
-    padding-left: 10px;
+    padding-left: 0;
     font-size: 16px;
     color: #fff;
     font-weight: 300;
@@ -189,11 +238,10 @@ h4 a{
     margin-left: 0;
     padding-left: 3px;
   }
-}
-
-@media screen and (max-width:480px){
-  /*a.title{
+  .mobilni{
+    display: initial;
+  }
+  .notMobilni{
     display: none;
-  }*/
- 
+  }
 }

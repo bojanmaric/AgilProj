@@ -19,32 +19,33 @@ import { PorudzbineComponent } from './admin/porudzbine/porudzbine.component';
 import { ProfileComponent } from './admin/profile/profile.component';
 import { InboxComponent } from './admin/inbox/inbox.component';
 import { AkcijaComponent } from './components/akcija/akcija.component';
+import { KataloziComponent } from './components/katalozi/katalozi.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'addGallery', component: AddgalleryComponent,canActivate:[AuthGuard] },/* canActivate:[AuthGuard]*/
-  { path: 'addArtical', component: AddartComponent,canActivate:[AuthGuard] },
- /*  { path: 'addSlide', component: AddslideComponent }, */
+  { path: 'addGallery', component: AddgalleryComponent, canActivate: [AuthGuard] },/* canActivate:[AuthGuard]*/
+  { path: 'addArtical', component: AddartComponent, canActivate: [AuthGuard] },
+  { path: 'katalozi', component: KataloziComponent }, 
   { path: 'login', component: LoginComponent },
-  { path: 'registration', component: RegistrationComponent,canActivate:[AuthGuard] },
+  { path: 'registration', component: RegistrationComponent, canActivate: [AuthGuard] },
   { path: 'search/:searchText', component: SearchComponent },
   { path: 'shopping', component: ShopingComponent },
   { path: 'categori', component: ArtCategoriComponent },
   { path: 'email', component: EmailsComponent },
   { path: 'galerija', component: GalerijaComponent },
-  {path:'artikal/:id',component:ArtikalComponent},
-  {path:'porudzbenice',component:PorudzbineComponent,canActivate:[AuthGuard]},
-  {path:'profile', component:ProfileComponent, canActivate:[AuthGuard]},
-  {path:'inbox', component:InboxComponent,canActivate:[AuthGuard]},
-  {path:'akcija', component:AkcijaComponent, canActivate:[AuthGuard]}
+  { path: 'artikal/:id', component: ArtikalComponent },
+  { path: 'porudzbenice', component: PorudzbineComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'inbox', component: InboxComponent, canActivate: [AuthGuard] },
+  { path: 'akcija', component: AkcijaComponent }
 
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload', scrollPositionRestoration: 'top' })],
+  imports: [RouterModule.forRoot(routes, { scrollOffset: [0, 0], scrollPositionRestoration: 'top' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

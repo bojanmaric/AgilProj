@@ -50,15 +50,35 @@ input[type=number]::-webkit-outer-spin-button {
     text-decoration: none;
     max-width: 70px;
     width: 50px;
-    margin: 0 10px;
     font-size: 20px;
-    padding: 6px;
-    border-radius: 3px;
+    padding: 5px;
     border: 1px solid rgb(169, 169, 169);
     outline: none;
     text-align: center;
     
 }
+.kol span{
+    border-radius: 0;
+    
+}
+.popustProcenat{
+    position: absolute;
+    top: 0;
+    
+    left: 0;
+    background-color: rgb(17, 177, 9);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    width: 80px;
+    max-width: 100px;
+    height: 30px;
+    text-align: center;
+    border-radius: 0 0 5px 0;
+}
+
+
+
 .kol span{
     cursor: pointer;
     font-size: 20px;
@@ -68,6 +88,126 @@ input[type=number]::-webkit-outer-spin-button {
     outline: none;
 
 }
+/*Slicni artikli*/
+.slicniArtikli{
+    margin:  1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+h2.slicni{
+    
+    margin: 1rem 1rem 0 1rem;
+    width: auto;
+    padding-left: 3rem;
+    color: rgb(69, 120, 240);
+    
+}
+.kr{
+    margin-left: 4rem;
+    width: 50px;
+    height: 4px;
+    margin-top: 0!important;
+    background-color: rgb(25, 64, 155);
+}
+
+mat-card-content{
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    
+    
+}
+mat-card-content h3{
+    width: 100%;
+    margin: auto;
+
+    font-weight: 500;
+    font-size: 20px;
+    color: #a47a06;
+}
+mat-card-title button{
+    
+    margin-left: 50%;
+   outline: none;
+   transition: .6s;
+}
+mat-card-title button:hover{
+    color: #68049d;
+    background: #dcdcdc;
+
+}
+mat-card img{
+    
+    transition: .7s;
+    height: auto;
+
+}
+mat-card .akcija{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+}
+.akcija img{
+    width: 100%;
+}/*
+.popust{
+    text-decoration-line: line-through;
+    font-size: 13px!important;
+}
+
+.popustProcenat{
+    position: absolute;
+    top: 0;
+    border-radius: 0 0 8px;
+    
+    left: 0;
+    background-color: rgb(17, 177, 9);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    max-width: 80px;
+    height: 30px;
+    text-align: center;
+    
+}
+.popustProcenat h2{
+    font-size: 16px;
+}*/
+mat-card .img:hover,
+    mat-card img:focus{
+    transform: scale(1.2);
+}
+
+mat-card-title{
+    text-align: center;
+    font-size: 13px!important;
+    text-transform: uppercase;
+    color: rgb(74, 150, 255);
+   
+}
+mat-card{
+    width: 200px;
+   position: relative;
+    margin: 1rem .5rem ;
+    overflow: hidden;
+  
+   
+    
+}
+
+mat-card-actions{
+  text-align: center;
+}
+mat-card-actions button{
+    
+    
+    border: none;
+    outline: none;
+}
+/*slicni*/
 
 @media screen and (max-width:768px){
     .artikal{

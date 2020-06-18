@@ -15,7 +15,10 @@ mat-form-field{
     width: 100%;
     
 }
-
+.tableShop{
+    overflow: auto;
+    box-shadow: -3px 0 15px rgb(123, 123, 123);
+}
 .spinerr{
     position: absolute;
     top: 0;

@@ -9,6 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginService } from 'src/app/servisi/login.service';
 import { EditArtDialogComponent } from '../dialogs/edit-art-dialog/edit-art-dialog.component';
+import { partitionArray } from '@angular/compiler/src/util';
 
 //import 'rxjs/add/operator/filter';
 @Component({
@@ -23,6 +24,7 @@ export class ArtCategoriComponent implements OnInit {
   p: any;
   artikliSort: Array<Artikal> = new Array<Artikal>();
   artikli: Array<Artikal> = new Array<Artikal>();
+  pun=true;
 
   public putanja = "http://localhost:3000/artikal/image/";
 
@@ -120,6 +122,12 @@ export class ArtCategoriComponent implements OnInit {
   loadData(kat, vr) {
 
    this.artikli= this.artiService.getArt(kat, vr);
+   if(this.artikli.length>0){
+     this.pun=true;
+   }
+   else{
+     this.pun=false;
+   }
      
    
   }

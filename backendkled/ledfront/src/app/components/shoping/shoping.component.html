@@ -1,5 +1,13 @@
 
-<div *ngIf="ima>0"  class="shopping ">
+<div class="info">
+    <h3>Lista za kupovinu je <span>INFORMATIVNOG KARAKTERA</span> i namenjena je kupcima radi kreiranja zahteva za ponudu.</h3>
+    <h3><span>LISTA NE OMOGUĆAVA ONLINE KUPOVINU</span>, već se Vaš zahtev prosleđuje, a od nas dobijate odgovor u vidu ponude email-om, ili ćemo vas kontaktirati na osnovu kontakt podataka koji ste popunili prilikom slanja porudžbenice.</h3>
+
+</div>
+
+
+
+<div *ngIf="ima>0"  class="shopping">
     <table>
         <tr>
             <th>
@@ -38,6 +46,6 @@
 
 </div>
 <div *ngIf="ima==0">
-    <h1 style="text-align: center; margin: 3rem 0;" class="text-danger">Niste dodali ni jedan artikal u korpu</h1>
+    <h1 [ngStyle]="{'text-align': 'center', 'margin': '3rem 0'}" class="text-danger">Niste dodali ni jedan artikal u korpu</h1>
 
 </div>

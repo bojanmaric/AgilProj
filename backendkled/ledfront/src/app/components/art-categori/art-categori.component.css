@@ -45,6 +45,26 @@ mat-card img{
 
 }
 
+.popustProcenat{
+    position: absolute;
+    top: 0;
+    border-radius: 0 0 8px;
+    
+    left: 0;
+    background-color: rgb(17, 177, 9);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    max-width: 80px;
+    height: 30px;
+    text-align: center;
+    
+}
+.popustProcenat h2{
+    font-size: 16px;
+}
+
 mat-card-title{
     text-align: center;
     font-size: 13px!important;
@@ -70,4 +90,10 @@ mat-card-actions button{
     
     border: none;
     outline: none;
+}
+.infoArt{
+    box-shadow: -3px 0 15px 0 rgb(130, 130, 130);
+    padding: 1rem;
+    margin: 2rem;
+    width: auto;
 }

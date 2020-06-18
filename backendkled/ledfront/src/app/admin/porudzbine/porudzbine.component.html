@@ -4,15 +4,16 @@
             <mat-expansion-panel>
                 <mat-expansion-panel-header>
                     <mat-panel-title>
-                        <button mat-icon-button color="warn" (click)="brisiPorudzbinu(porudzbina)"style="outline: none;">
+                        <button mat-icon-button color="warn" (click)="brisiPorudzbinu(porudzbina)"[ngStyle]="{'outline': 'none'}">
                             <mat-icon>delete</mat-icon>
                         </button>
-                        {{porudzbina.imeKupca }} &nbsp; {{porudzbina.datum}}</mat-panel-title>
+                        {{porudzbina.imeKupca }} &nbsp; &nbsp; {{porudzbina.datum | date: 'M/d/yy, h:mm a'}}</mat-panel-title>
                     <mat-panel-description>Kontakt: {{porudzbina.kontaktKupca}}</mat-panel-description>
 
                 </mat-expansion-panel-header>
                 <h3> Adresa: {{porudzbina.adresaKupca}}</h3>
                 <h3>Email: {{porudzbina.emailPosiljaoca}}</h3>
+                
                 <div *ngFor="let art of porudzbina.artikli">
                     <h3 class="text-primary">
                         <span>{{art.nazivArtikla}}</span>

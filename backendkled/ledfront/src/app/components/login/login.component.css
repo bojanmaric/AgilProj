@@ -31,11 +31,3 @@ mat-form-field{
     margin: .5rem;
     outline: none;
 }
-h3 span a{
-    text-decoration: none;
-    color: rgb(184, 183, 183);
-    transition: .5s;
-}
-h3 span a:hover{
-    color: rgb(98, 98, 98);
-}

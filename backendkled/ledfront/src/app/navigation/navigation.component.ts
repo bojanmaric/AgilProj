@@ -7,12 +7,15 @@ import { LoginService } from '../servisi/login.service';
 import { Router } from '@angular/router';
 import { ArtikalService } from '../servisi/artikal.service';
 import { EmailsService } from '../servisi/emails.service';
+import { MatDrawerContainer } from '@angular/material/sidenav';
 
+declare var $:any;
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css']
 })
+
 export class NavigationComponent implements OnInit {
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -24,18 +27,20 @@ export class NavigationComponent implements OnInit {
   ulogovan = false;
   searchText: string;
   countShop=this.artiservice.shopArtikli.length;
- /*  porudzbenica=0;
-  inbox=0; */
 
   dropd: boolean = false;
 
+  onActivate(event){
+    document.querySelector('mat-sidenav-content').scrollTop = 0;
+  }
   ngOnInit(){
     this.artiservice.getCount().subscribe( data=>{
       this.countShop=data;
     });
-   /*  this.porudzPorNum() */
+    
   
   }
+ 
   panelOpenState = false;
   constructor(private breakpointObserver: BreakpointObserver, 
     private logingService: LoginService, 
@@ -50,23 +55,20 @@ export class NavigationComponent implements OnInit {
       this.router.navigate(['/search/', this.searchText])
       this.searchText = null;
     }
-
   }
   logout() {
     this.logingService.logout();
     this.router.navigate(['/login']);
-
   }
- /*  porudzPorNum(){
-   this.porudzbenica= this.emailSer.porudzbinaNum()
-    this.inbox=this.emailSer.porukaNum();
-  } */
+
   ulogovanIn() {
     if (this.logingService.isLogged()) {
       return true;
     }
     return false;
   }
-  
+  activeSeac(){
+    $('.searchMobile').toggleClass('activeSearch');
+  }
 
 }

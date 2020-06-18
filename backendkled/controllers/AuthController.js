@@ -54,7 +54,8 @@ const login = (req, res, next) => {
                         let token = jwt.sign({ name: user.name }, 'AzQ,PI)0(', { expiresIn: '2h' })
                         res.json({
                             massage: 'login Successful',
-                            token: token
+                            token: token,
+                            user:user
                         })
                     } else {
                         res.json({
@@ -74,3 +75,4 @@ module.exports = {
     register, login
 
 }
+

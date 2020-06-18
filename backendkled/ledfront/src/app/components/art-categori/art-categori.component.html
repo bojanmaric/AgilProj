@@ -1,5 +1,7 @@
-<div style="margin: 2rem 1rem;">
+<div [ngStyle]="{'margin': '2rem 1rem'}">
 
+
+  <div *ngIf="pun">
   <pagination-controls class="text-center myPagination" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
     maxSize="5"> </pagination-controls>
   <div class="proizvodi">
@@ -10,6 +12,9 @@
       <mat-card>
 
         <img mat-card-image (click)="openArtikal(art)" [src]="getImage(art.srcSlika)" alt="">
+        <div *ngIf="art.popust>0" class="popustProcenat">
+          <h2 >-{{art.popust}}%</h2>
+      </div>
         <div class="akcija">
           <img *ngIf="art.akcija" src="../../../../assets/akcija.png" alt="">
         </div>
@@ -20,8 +25,8 @@
 
         </mat-card-content>
         <mat-card-title>{{art.nazivArtikla}} &nbsp; {{art.sifraArtikla}} </mat-card-title>
-        <button mat-stroked-button color="accent" (click)="addShop(art)" style="width: 100%; outline: none;">
-          <mat-icon>shopping_basket</mat-icon>
+        <button mat-stroked-button color="accent" (click)="addShop(art)" [ngStyle]="{'width': '100%', 'outline': 'none'}">
+          <mat-icon>add_shopping_cart</mat-icon>
         </button>
 
         <mat-card-actions *ngIf="ulogovanIn()">
@@ -35,4 +40,14 @@
 
   <pagination-controls class="text-center myPagination" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
     maxSize="5"> </pagination-controls>
+
+  </div>
+
+  <div class="infoArt" *ngIf="pun==false">
+
+    <h1 style="text-align: center; margin: 2rem; color: rgb(189, 0, 0);" >Trenutno nema proizvoda u toj kategoriji <br> <br> Za vise informacija kontaktirajte nas preko poruka</h1>
+
+  </div>
+
+
 </div>

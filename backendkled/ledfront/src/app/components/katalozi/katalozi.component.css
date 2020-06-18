@@ -1,0 +1,39 @@
+.katalozi{
+    margin: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.katalog{
+    width: 250px;
+    height: auto;
+    box-shadow: -3px 0 15px 0 rgb(91, 91, 91);
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 1rem;
+}
+.katalog a{
+    text-decoration: none;
+}
+.katalog .img img{
+    transition: .7s;
+    width: 100%;
+    height: 250px;
+
+}
+.katalog .img{
+    overflow: hidden;
+
+}
+.katalog .img img:hover,
+    .katalog .img img:focus{
+    transform: scale(1.2);
+}
+.katalog h3{
+    padding: 0 20px;
+    margin-top: 10px;
+    font-size: 19px;
+    text-align: center;
+    color: rgb(4, 91, 93);
+
+}

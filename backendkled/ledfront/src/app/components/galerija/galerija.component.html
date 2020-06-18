@@ -1,9 +1,7 @@
 <div class="galerija">
     <div *ngFor="let gal of galleryImg" class="slika">
+        <button *ngIf="ulogovanIn()" mat-mini-fab (click)="brisiSliku(gal)" color="warn"><mat-icon>delete</mat-icon></button>
         <img [src]="getImage(gal.srcSlika)" alt="">
     </div>
-
-
-
 </div>
 <div class="clear"></div>

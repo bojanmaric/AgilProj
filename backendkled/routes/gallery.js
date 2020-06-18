@@ -62,6 +62,20 @@ router.get('/image/:image',(req,res)=>{
     else res.status(200).sendFile(path.resolve(path.join(__dirname,'../uploads/gallery/',req.params.image)));
 
 });
+router.delete('/delete/:id',(req,res)=>{
 
+  Gallery.deleteSliku(req.params.id.toString(),(err)=>{
+    if(err){
+      res.json({success:false,msg:"greska prilikom brisanja"})
+    }else{
+      res.json({success:true,msg:"uspesno obrisana slika"})
+    }
+  })
+
+})
+router.delete('/brisi/:image', (req, res) => {
+
+  fs.unlinkSync('./uploads/gallery/' + req.params.image)
+});
 
 module.exports = router;

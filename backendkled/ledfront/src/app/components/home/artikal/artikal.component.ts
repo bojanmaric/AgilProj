@@ -1,9 +1,9 @@
 import { Component, OnInit, Pipe } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ArtikalService } from 'src/app/servisi/artikal.service';
 import { Artikal } from 'src/app/model/Artikal';
 import { find } from 'rxjs/operators';
-import { error } from 'protractor';
+import { error, $ } from 'protractor';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -14,15 +14,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 /* @Pipe({name: 'round'}) */
 export class ArtikalComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private artiService: ArtikalService, private snackBar:MatSnackBar) { }
+  constructor(private route: ActivatedRoute,private router:Router, private artiService: ArtikalService, private snackBar:MatSnackBar) { }
 
   public putanja = "http://localhost:3000/artikal/image/";
 
   artikal: Artikal;
   id: any
   kolicina=0;
+  slicniArtikli: Array<Artikal> = new Array<Artikal>();
   ngOnInit(): void {
-
+   
    this.loadArt();
 
   }
@@ -31,8 +32,11 @@ export class ArtikalComponent implements OnInit {
       this.id = params.get('id');
       this.artiService.getArtikalbyId(this.id).subscribe(
         res => {
-          console.log(res)
-          this.artikal = res['artikal']
+          
+          this.artikal = res['artikal'];
+          this.slicniArtikli=this.artiService.getArt(this.artikal.kategorija, this.artikal.vrstaProizvoda)
+          
+        
         }
       );
     })
@@ -54,10 +58,13 @@ export class ArtikalComponent implements OnInit {
 
   }
 
+  openArtikal(art){
+    this.router.navigate(['/artikal/',art._id])
+  }
   
 
   getImage(art){
-    return this.putanja+art.srcSlika;
+    return this.putanja+art;
   }
 
 }

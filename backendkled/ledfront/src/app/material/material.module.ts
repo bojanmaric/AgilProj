@@ -19,6 +19,7 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 const MaterialComponents = [
   MatToolbarModule,
@@ -38,7 +39,8 @@ const MaterialComponents = [
   MatPaginatorModule,
   MatDialogModule,
   MatDividerModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatGridListModule
 ];
 
 

@@ -38,23 +38,16 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit(): void {
     this.loadData();
-
     this.ulogovan=this.logiService.isLogged();
-
   }
 
   loadData() {
     this.artiService.getAllArtikle().subscribe(res => {
-
       this.artikli = res['artikli'];
-      
-
     },
       error => {
         this.snacBar.open("greska", "OK")
       });
-
-      
 
   }
   getImage(art) {

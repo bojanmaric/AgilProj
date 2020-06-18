@@ -1,4 +1,4 @@
-<div style="margin: 1rem;"></div>
+<div [ngStyle]="{'margin': '1rem'}"></div>
   <div class="container-fluid">
     <h1 class="text-primary">Akcijski proizvodi</h1>
     <hr>
@@ -13,6 +13,9 @@
         <mat-card>
          
           <img (click)="openArtikal(art)" class="img"  mat-card-image [src]="getImage(art.srcSlika)" alt="">
+          <div *ngIf="art.popust>0" class="popustProcenat">
+            <h2 >-{{art.popust}}%</h2>
+        </div>
           <div class="akcija">
             <img *ngIf="art.akcija" src="../../../../assets/akcija.png" alt="">
         </div>
@@ -23,8 +26,8 @@
           </mat-card-content>
             
           <mat-card-title>{{art.nazivArtikla}} &nbsp; {{art.sifraArtikla}} </mat-card-title>
-          <button   mat-stroked-button color="accent" (click)="addShop(art)" style="width: 100%; outline: none;" >
-            <mat-icon>shopping_basket</mat-icon>
+          <button   mat-stroked-button color="accent" (click)="addShop(art)" [ngStyle]="{'width': '100%', 'outline': 'none'}" >
+            <mat-icon>add_shopping_cart</mat-icon>
           </button>
         
          

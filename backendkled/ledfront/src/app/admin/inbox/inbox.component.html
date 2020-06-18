@@ -5,10 +5,10 @@
                 <mat-expansion-panel-header>
 
                     <mat-panel-title>
-                        <button mat-icon-button color="warn" (click)="brisiPoruku(poruka)" style="outline: none;">
+                        <button mat-icon-button color="warn" (click)="brisiPoruku(poruka)" [ngStyle]="{'outline':'none'}" >
                             <mat-icon>delete</mat-icon>
                         </button>
-                        {{poruka.imePosiljaoca}} {{poruka.datum}}</mat-panel-title>
+                        {{poruka.imePosiljaoca}}&nbsp; &nbsp;{{poruka.datum | date: 'M/d/yy, h:mm a'}}</mat-panel-title>
                     <mat-panel-description>email: {{poruka.emailPosiljaoca}}</mat-panel-description>
                 </mat-expansion-panel-header>
                 <h3>Adresa: {{poruka.kontaktPosiljaoca}}</h3>

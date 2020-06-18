@@ -29,6 +29,15 @@ export class GalleryService {
     return this.http.post(this.ruta+'/add',fdata)
 
   }
+  brisiSliku(id,slika){
+    this.delSliku(slika).subscribe()
+    return this.http.delete(this.ruta+'/delete/'+id);
+  }
+
+  delSliku(image){
+    return this.http.delete(this.ruta+'/brisi/'+image)
+
+  }
 
 
 

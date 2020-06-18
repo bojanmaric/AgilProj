@@ -1,4 +1,4 @@
-    <div style="margin-top: 1rem;"></div>
+    <div [ngStyle]="{'margin-top': '1rem'}"></div>
     <h1 *ngIf="!prazan" class="text-center text-primary">Rezultati pretrage <span class="text-success">"{{searchText}}"</span></h1>
     
      <h1 *ngIf="prazan" class="text-primary text-center"> Nije nista pronadjeno po obeležju: <span class="text-danger">"{{searchText}}"</span> </h1>
@@ -9,12 +9,20 @@
       <mat-card>
        
         <img  mat-card-image (click)="openArtikal(art)" [src]="getImage(art.srcSlika)" alt="">
+        <div *ngIf="art.popust>0" class="popustProcenat">
+          <h2 >-{{art.popust}}%</h2>
+      </div>
+      
+      <div class="akcija">
+        <img *ngIf="art.akcija" src="../../../../assets/akcija.png" alt="">
+      </div>
         <mat-card-content>
           <h3>{{art.cenaArtikla}}.00</h3>
          
         </mat-card-content>
         <mat-card-title>{{art.nazivArtikla}} &nbsp; {{art.sifraArtikla}} </mat-card-title>
-        <button   mat-stroked-button color="accent" (click)="addShop(art)" style="width: 100%; outline: none;" ><mat-icon>shopping_basket</mat-icon></button>
+        <button   mat-stroked-button color="accent" (click)="addShop(art)" [ngStyle]="{'width': '100%', 'outline': 'none'}" >
+          <mat-icon>add_shopping_cart</mat-icon></button>
          
          
         <mat-card-actions *ngIf="ulogovanIn()">

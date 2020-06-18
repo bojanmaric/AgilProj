@@ -8,18 +8,14 @@
       </a>
       <a [routerLink]="['/']" class="title"> Led Master </a></mat-toolbar>
     <mat-nav-list>
+<!-- navside na dekstop racunarima i vecom sirinom od 768px sa funkciom colapse -->
 
-      <mat-accordion>
+      <mat-accordion class="notMobilni">
 
-        <a mat-list-item [routerLink]="['/']" >Pocetna</a>
-        <a mat-list-item class="sidea" [routerLink]="['/galerija']">Galerija</a>
-        <a mat-list-item class="sidea" [routerLink]="['/akcija']">Akcija</a>
-        <a mat-list-item class="sidea" [routerLink]="['/email']">Poruka</a>
-
-        <a mat-list-item  [routerLink]="['/email']">Katalozi</a>
-
-
-        <a mat-list-item href="#">link 1</a>
+        <div class="linksA">
+          <a mat-raised-button [routerLink]="['/']" >Pocetna</a>
+         
+        </div>
 
         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
@@ -32,48 +28,184 @@
           <a mat-list-item [routerLink]="['/categori']"
             [queryParams]="{categori:'dekorativnaRasveta',vrsta:'lusteri'}">Luster</a>
           <a mat-list-item [routerLink]="['/categori']"
-            [queryParams]="{categori:'dekorativnaRasveta', vrsta:'visilice'}">Plafonjere</a>
+            [queryParams]="{categori:'dekorativnaRasveta', vrsta:'visilice'}">Visilice</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'dekorativnaRasveta', vrsta:'spotovi'}">Spotovi</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'dekorativnaRasveta', vrsta:'decijaRasveta'}">Decija rasveta</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'dekorativnaRasveta', vrsta:'plafonskeLampe'}">Plafonske lampe</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'dekorativnaRasveta', vrsta:'podneLampe'}">Podne lampe</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'dekorativnaRasveta', vrsta:'zidneLampe'}">Zidne lampe</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'dekorativnaRasveta', vrsta:'stoneLampe'}">Stone lampe</a>
 
         </mat-expansion-panel>
         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
             <mat-panel-title>
-              <a mat-list-item href="">spoljna rasveta</a>
+              <a mat-list-item [routerLink]="['/categori']" [queryParams]="{categori:'ledRasveta', vrsta:''}">Led
+                rasveta</a>
             </mat-panel-title>
 
           </mat-expansion-panel-header>
-          <a mat-list-item href="">Lusteri</a>
-          <a mat-list-item href="">Visilice</a>
-          <a mat-list-item href="">Plafonjere</a>
+          <a mat-list-item [routerLink]="['/categori']" [queryParams]="{categori:'ledRasveta', vrsta:'ledSijalice'}">Led
+            sijalice</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'ledRasveta', vrsta:'ledReflektori'}">Led reflektori</a>
+          <a mat-list-item [routerLink]="['/categori']" [queryParams]="{categori:'ledRasveta', vrsta:'ledPaneli'}">Led
+            paneli</a>
+          <a mat-list-item [routerLink]="['/categori']" [queryParams]="{categori:'ledRasveta', vrsta:'ledCevi'}">Led
+            cevi</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'ledRasveta', vrsta:'plafonskeLampe'}">Plafonske Lampe</a>
+          <a mat-list-item [routerLink]="['/categori']" [queryParams]="{categori:'ledRasveta', vrsta:'rozente'}">Led
+            rozetne</a>
+
 
         </mat-expansion-panel>
         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
             <mat-panel-title>
-              <a mat-list-item href="">Ugradna rasveta</a>
+              <a mat-list-item [routerLink]="['/categori']"
+                [queryParams]="{categori:'spoljnaRasveta', vrsta:''}">Spoljna rasveta</a>
             </mat-panel-title>
 
           </mat-expansion-panel-header>
-          <a mat-list-item href="">Lusteri</a>
-          <a mat-list-item href="">Visilice</a>
-          <a mat-list-item href="">Plafonjere</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'spoljnaRasveta', vrsta:'fenjeri'}">Fenjeri</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'spoljnaRasveta', vrsta:'zidneLampe'}">Zidne lampe</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'spoljnaRasveta', vrsta:'stubici'}">Stubici</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'spoljnaRasveta', vrsta:'brodskeLampe'}">Brodske lampe</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'spoljnaRasveta', vrsta:'bastenskeLampe'}">Bastenske lampe</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'spoljnaRasveta', vrsta:'betonskeUgradne'}">Betonske ugradne</a>
 
         </mat-expansion-panel>
         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
             <mat-panel-title>
-              <a mat-list-item href="">Led rasveta</a>
+              <a mat-list-item [routerLink]="['/categori']"
+                [queryParams]="{categori:'ugradnaRasveta', vrsta:''}">Ugradna rasveta</a>
             </mat-panel-title>
 
           </mat-expansion-panel-header>
-          <a mat-list-item href="">Lusteri</a>
-          <a mat-list-item href="">Visilice</a>
-          <a mat-list-item href="">Plafonjere</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'ugradnaRasveta', vrsta:'halogena'}">Halogena rasveta</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'ugradnaRasveta', vrsta:'ledPaneli'}" >Led paneli</a>
 
         </mat-expansion-panel>
 
       </mat-accordion>
-      <a mat-list-item href="#">Link </a>
+
+<!-- navside na mobilnom sa funkciom colapse -->
+      <mat-accordion class="mobilni">
+
+        <div class="linksA">
+          <a mat-raised-button  [routerLink]="['/']"   (click)="drawer.toggle()" >Pocetna</a>
+          <a mat-raised-button  [routerLink]="['/galerija']" (click)="drawer.toggle()"  >Galerija</a>
+          <a mat-raised-button  [routerLink]="['/akcija']" (click)="drawer.toggle()">Akcija</a>
+          <a mat-raised-button  [routerLink]="['/email']" (click)="drawer.toggle()">Poruka</a>
+
+          <a mat-raised-button [routerLink]="['/katalozi']" (click)="drawer.toggle()">Katalozi</a>
+        </div>
+
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <a mat-list-item [routerLink]="['/categori']"
+                [queryParams]="{categori:'dekorativnaRasveta', vrsta:''}" (click)="drawer.toggle()">Dekorativna rasveta</a>
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'dekorativnaRasveta',vrsta:'lusteri'}" (click)="drawer.toggle()">Luster</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'dekorativnaRasveta', vrsta:'visilice'}" (click)="drawer.toggle()">Visilice</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'dekorativnaRasveta', vrsta:'spotovi'}" (click)="drawer.toggle()">Spotovi</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'dekorativnaRasveta', vrsta:'decijaRasveta'}" (click)="drawer.toggle()">Decija rasveta</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'dekorativnaRasveta', vrsta:'plafonskeLampe'}"  (click)="drawer.toggle()">Plafonske lampe</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'dekorativnaRasveta', vrsta:'podneLampe'}" (click)="drawer.toggle()">Podne lampe</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'dekorativnaRasveta', vrsta:'zidneLampe'}" (click)="drawer.toggle()">Zidne lampe</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'dekorativnaRasveta', vrsta:'stoneLampe'}" (click)="drawer.toggle()">Stone lampe</a>
+
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <a mat-list-item [routerLink]="['/categori']" [queryParams]="{categori:'ledRasveta', vrsta:''}" (click)="drawer.toggle()">Led
+                rasveta</a>
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <a mat-list-item [routerLink]="['/categori']" [queryParams]="{categori:'ledRasveta', vrsta:'ledSijalice'}" (click)="drawer.toggle()">Led
+            sijalice</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'ledRasveta', vrsta:'ledReflektori'}" (click)="drawer.toggle()">Led reflektori</a>
+          <a mat-list-item [routerLink]="['/categori']" [queryParams]="{categori:'ledRasveta', vrsta:'ledPaneli'}" (click)="drawer.toggle()">Led
+            paneli</a>
+          <a mat-list-item [routerLink]="['/categori']" [queryParams]="{categori:'ledRasveta', vrsta:'ledCevi'}" (click)="drawer.toggle()">Led
+            cevi</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'ledRasveta', vrsta:'plafonskeLampe'}" (click)="drawer.toggle()">Plafonske Lampe</a>
+          <a mat-list-item [routerLink]="['/categori']" [queryParams]="{categori:'ledRasveta', vrsta:'rozente'}" (click)="drawer.toggle()">Led
+            rozetne</a>
+
+
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <a mat-list-item [routerLink]="['/categori']"
+                [queryParams]="{categori:'spoljnaRasveta', vrsta:''}" (click)="drawer.toggle()">Spoljna rasveta</a>
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'spoljnaRasveta', vrsta:'fenjeri'}" (click)="drawer.toggle()">Fenjeri</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'spoljnaRasveta', vrsta:'zidneLampe'}" (click)="drawer.toggle()">Zidne lampe</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'spoljnaRasveta', vrsta:'stubici'}" (click)="drawer.toggle()">Stubici</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'spoljnaRasveta', vrsta:'brodskeLampe'}" (click)="drawer.toggle()">Brodske lampe</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'spoljnaRasveta', vrsta:'bastenskeLampe'}" (click)="drawer.toggle()">Bastenske lampe</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'spoljnaRasveta', vrsta:'betonskeUgradne'}" (click)="drawer.toggle()">Betonske ugradne</a>
+
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <a mat-list-item [routerLink]="['/categori']"
+                [queryParams]="{categori:'ugradnaRasveta', vrsta:''}"(click)="drawer.toggle()">Ugradna rasveta</a>
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'ugradnaRasveta', vrsta:'halogena'}"(click)="drawer.toggle()">Halogena rasveta</a>
+          <a mat-list-item [routerLink]="['/categori']"
+            [queryParams]="{categori:'ugradnaRasveta', vrsta:'ledPaneli'}" (click)="drawer.toggle()">Led paneli</a>
+
+        </mat-expansion-panel>
+
+      </mat-accordion>
+     <!--  kraj -->
+
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content fixedInViewport>
@@ -85,31 +217,34 @@
       <a class="logo" [routerLink]="['/']">
         <img src="../../assets/ikoo.png" width="35px" alt="">
       </a>
-      <h4> <a [routerLink]="['/']" class=""> </a></h4>
+      
+      <h4> <a [routerLink]="['/']" class=""> Led Master</a></h4>
       <div class="cen">
 
         <!-- <a mat-button [routerLink]="['/']" class="contenta title">Pocetna</a> -->
         <a mat-button class="contenta title" [routerLink]="['/galerija']">Galerija</a>
         <a mat-button class="contenta title" [routerLink]="['/akcija']">Akcija</a>
-
+        <a mat-button class="contenta title" [routerLink]="['/katalozi']">Katalozi</a>
         <a mat-button class="contenta title" [routerLink]="['/email']">Poruka</a>
-      <!--   <a mat-button class="contenta title" [routerLink]="['/email']">Katalozi</a>
- -->
+        
       </div>
       <button *ngIf="ulogovanIn()" mat-icon-button [matMenuTriggerFor]="adminMenu">
         <mat-icon>support_agent</mat-icon>
       </button>
       <mat-menu class="admi" #adminMenu xPosition="before">
-        <button color="primary" mat-menu-ite mat-icon-button [routerLink]="['/inbox']">
-          <mat-icon matBadgeColor="accent">inbox</mat-icon><!-- [matBadge]="inbox" -->
+        <button class="admiBtn" color="primary" [ngStyle]="{'outline':'none'}"  mat-icon-button [routerLink]="['/inbox']">
+          <mat-icon matBadgeColor="accent">inbox</mat-icon>
         </button>
-        <button color="primary" mat-menu-ite mat-icon-button [routerLink]="['/porudzbenice']">
-          <mat-icon matBadgeColor="accent">add_shopping_cart</mat-icon><!-- [matBadge]="porudzbenica" -->
+        <button color="primary"  mat-icon-button  [ngStyle]="{'outline':'none'}" [routerLink]="['/porudzbenice']">
+          <mat-icon matBadgeColor="accent">add_shopping_cart</mat-icon>
         </button>
-        <button color="primary" mat-menu-ite mat-icon-button [routerLink]="['/profile']">
+        <button color="primary"  mat-icon-button  [ngStyle]="{'outline':'none'}" [routerLink]="['/profile']">
           <mat-icon>account_box</mat-icon>
         </button>
-
+        <button color="primary"  mat-icon-button  [ngStyle]="{'outline':'none'}" [routerLink]="['/registration']">
+          <mat-icon>person_add_alt_1</mat-icon>
+        </button>
+        
       </mat-menu>
       <button *ngIf="ulogovanIn()" mat-icon-button [matMenuTriggerFor]="belowMenu">
         <mat-icon>add_circle_outline</mat-icon>
@@ -117,7 +252,6 @@
       <mat-menu #belowMenu="matMenu" xPosition="before">
         <a mat-menu-item [routerLink]="['/addArtical']">Dodaj Artikal</a>
         <a mat-menu-item [routerLink]="['/addGallery']">Dodaj u galeriju</a>
-        <!-- <a mat-menu-item [routerLink]="['/addSlide']">Dodaj slide</a> -->
       </mat-menu>
 
 
@@ -131,8 +265,8 @@
           <mat-icon>search</mat-icon>
         </button>
       </form>
-
-
+      <button class="searMobile" mat-icon-button (click)="activeSeac()"> <mat-icon>search</mat-icon></button>
+ 
       <button *ngIf="!ulogovanIn()" mat-mini-fab color="primary" class="logbtn" [routerLink]="['/login']">
         <mat-icon>account_circle</mat-icon>
       </button>
@@ -140,10 +274,19 @@
         <mat-icon>exit_to_app</mat-icon>
       </button>
     </mat-toolbar>
-<div class="maincontent">
-    <router-outlet></router-outlet>
-  </div>
-
+    <div class="searchMobile">
+      <form (ngSubmit)="search()" action="">
+        <mat-form-field>
+        <input type="text" [(ngModel)]="searchText" name="searchText" matInput placeholder="Search">
+        <button mat-raised-button type="submit" color="primary" matSuffix>
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+      </form>
+    </div>
+    <div class="maincontent">
+      <router-outlet (activate)="onActivate($event)"></router-outlet>
+    </div>
     <div class="footer">
       <app-footer></app-footer>
     </div>

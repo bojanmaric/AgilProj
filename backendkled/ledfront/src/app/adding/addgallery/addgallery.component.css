@@ -1,0 +1,21 @@
+.addGal{
+    width: 70%;
+    margin: 5rem auto;
+    display: block;
+    padding: 2rem;
+    box-shadow: 0 2px 5px 0 rgb(201, 201, 201);
+}
+.addGal .form-group{
+    text-align: center;
+    
+}
+.addGal .form-group label{
+    font-size: 24px;
+    text-align: center;
+    color: rgb(6, 98, 191);
+    
+}
+.addGal button{
+  width: 100%;
+   padding: 5px;
+}

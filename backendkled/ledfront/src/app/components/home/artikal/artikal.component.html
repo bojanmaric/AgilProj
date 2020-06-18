@@ -1,7 +1,12 @@
+
 <div class="artikal">
     <div class="slika">
-        <img [src]="getImage(artikal)" alt="">
+        <img [src]="getImage(artikal.srcSlika)" alt="">
+        <div *ngIf="artikal.popust>0" class="popustProcenat">
+            <h2>-{{artikal.popust}}%</h2>
+        </div>
         <div class="akcija">
+
             <img *ngIf="artikal.akcija" src="../../../../assets/akcija.png" alt="">
         </div>
     </div>
@@ -10,7 +15,8 @@
 
         <h4>{{artikal.sifraArtikla}}</h4>
         <h2 class="popust  text-danger" *ngIf="artikal.popust > 0">
-            {{(artikal.cenaArtikla + (artikal.cenaArtikla*(artikal.popust/(100-artikal.popust)))) | number:'' }} din.</h2>
+            {{(artikal.cenaArtikla + (artikal.cenaArtikla*(artikal.popust/(100-artikal.popust)))) | number:'' }} din.
+        </h2>
         <h1><span class="text-success"> {{artikal.cenaArtikla | number:''}}.00 din. </span></h1>
         <div class="opisArtikla">
             <h2 *ngIf="artikal.jacina"> Jačina <span class="float-right text-success">{{artikal.jacina}} </span></h2>
@@ -35,10 +41,44 @@
                 <span (click)="minus()">-</span>
                 <input type="number" [(ngModel)]="kolicina">
                 <span (click)="plus()">+</span>
-                <button  mat-raised-button class="dodajBtn float-right" (click)="addShop(artikal)"> Dodaj u korpu</button>
+                <button mat-raised-button class="dodajBtn float-right" (click)="addShop(artikal)"> Dodaj u korpu</button>
             </div>
-          
+
         </div>
+    </div>
+</div>
+
+<hr style="margin-top:4rem;">
+<h2 class="slicni">Slični artikli</h2>
+<hr class="kr">
+
+<div class="slicniArtikli">
+  
+    <div *ngFor="let art of slicniArtikli | slice:0:5">
+        <mat-card>
+
+            <img (click)="openArtikal(art)" class="img" mat-card-image [src]="getImage(art.srcSlika)" alt="">
+            <div *ngIf="art.popust>0" class="popustProcenat">
+                <h2>-{{art.popust}}%</h2>
+            </div>
+            <div class="akcija">
+                <img *ngIf="art.akcija" src="../../../../assets/akcija.png" alt="">
+            </div>
+            <mat-card-content>
+                <h3 class="popust  text-danger" *ngIf="art.popust > 0">
+                    {{(art.cenaArtikla + (art.cenaArtikla*(art.popust/(100-art.popust)))) | number:'' }} </h3>
+                <h3>{{art.cenaArtikla | number:''}}.00</h3>
+
+            </mat-card-content>
+            <mat-card-title>{{art.nazivArtikla}} </mat-card-title>
+
+            <button mat-stroked-button color="accent" (click)="addShop(art)" [ngStyle]="{'width': '100%', 'outline': 'none'}">
+                <mat-icon>add_shopping_cart</mat-icon>
+            </button>
+
+        </mat-card>
+
+
     </div>
 
 </div>

@@ -18,12 +18,17 @@
     outline: none;
     
 }
-
+.lokation{
+    padding: 1rem 2rem;
+}
 @media screen and (max-width: 768px){
     .email{
         grid-template-columns: 100%;
     }
     .email form{
         width: 70%;
+    }
+    .lokation iframe{
+        height: 400px;
     }
 }

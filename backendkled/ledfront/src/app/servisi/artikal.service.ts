@@ -46,10 +46,11 @@ export class ArtikalService {
   //vraca trenutno stanje proizvoda u korpi
   public shop() {
 
-    console.log(this.shopArtikli)
     return this.shopArtikli;
 
   }
+
+  //vraca artikle ucitane
   public getArt(kategorija, vrsta): Array<Artikal> {
 
     if (this.dataChange.getValue().length == 0) {
@@ -81,7 +82,7 @@ export class ArtikalService {
     var nalazi = false;
     for (var i in this.shopArtikli) {
       if (this.shopart.sifraArtikla === this.shopArtikli[i].sifraArtikla) {
-        this.shopArtikli[i].kolicina = this.shopArtikli[i].kolicina + this.shopArtikli[i].kolicina;
+        this.shopArtikli[i].kolicina = this.shopArtikli[i].kolicina + this.shopart.kolicina;
         this.shopArtikli[i].ukupno = this.shopArtikli[i].cenaArtikla * this.shopArtikli[i].kolicina;
         console.log(this.shopArtikli[i].ukupno)
         nalazi = true;

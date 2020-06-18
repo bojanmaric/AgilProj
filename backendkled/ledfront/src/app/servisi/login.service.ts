@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class LoginService {
   authToken:any;
-  user:User;
+ private user:User;
 
   noAuthHeader={headers:new HttpHeaders({'NoAuth':'True'}) };
   ruta:string='http://localhost:3000/users';
@@ -51,8 +51,13 @@ export class LoginService {
 
 
   }
+  getUser():User{
+    return JSON.parse(localStorage.getItem('user'))
+  }
+ 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
     
   }
 

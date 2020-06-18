@@ -1,19 +1,36 @@
+.info{
+    margin:2rem;
+    text-align: left;
+    border: 5px solid rgb(14, 88, 193);
+    padding: 1rem;
+    box-shadow: -3px 0 15px 0 rgb(117, 117, 117);
+}
+.info h3 span{
+    color:rgb(14, 88, 193) ;
+    font-weight: 500;
+}
 
 .shopping{
     margin: 2rem .5rem;
+    overflow: auto;
+    padding: .5rem;
+    box-shadow: -3px 0 15px 0 rgb(117, 117, 117);
+    
 }
 table{
-    width: 90%;
+    width: 100%;
     margin: 2rem 1rem;
+    
 }
 tr{
     border-bottom: 1px solid rgb(152, 152, 152);
+    padding: .3rem;
 }
 tr th{
 
     text-align: center;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 17px;
+    font-weight: 500;
     text-transform: uppercase;
 
 }

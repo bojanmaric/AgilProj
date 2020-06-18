@@ -1,4 +1,4 @@
-<h1 class="text-center text-primary" style="margin-top: 2rem;">Unesite sve podatke</h1>
+<h1 class="text-center text-primary" [ngStyle]="{'margin-top': '2rem'}">Unesite sve podatke</h1>
 <form (ngSubmit)="registration()" [formGroup]="korisnikReg" class="registration">
     <mat-form-field appearance="fill">
         <mat-label>Ime</mat-label>
@@ -32,7 +32,7 @@
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
     </mat-form-field>
-    <button type="submit" mat-raised-button color="primary">Registrujte se </button>
+    <button type="submit" mat-raised-button color="primary">Registruj novog</button>
 </form>
 <div *ngIf="showSpiner"class="spinerr">
 <mat-spinner></mat-spinner>
