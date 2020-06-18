@@ -100,9 +100,29 @@ mat-card-actions button{
     outline: none;
 }
 
+.itemPer{
+    text-align: right;
+    margin: 2rem ;
+    color: rgb(74, 150, 255);
+  
+}
+.itemPer span{
+    cursor: pointer;
+}
+.itemPer span:hover{
+    color: rgb(23, 68, 132);
+    
+}
+
+   
 @media screen  and (max-width:480px){
+
+    .proizvodi{
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
    mat-card{
-       margin: .3rem auto;
-       width: 90%;
+       margin: .3rem .1rem;
+        width: 93%;
    }
 }

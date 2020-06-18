@@ -4,14 +4,20 @@
   <div *ngIf="pun">
   <pagination-controls class="text-center myPagination" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
     maxSize="5"> </pagination-controls>
+    <div class="itemPer">
+      <span>Prikaži: &nbsp;</span>
+      <span (click)="changePerPage(10)">10 &nbsp;/&nbsp;</span>
+      <span (click)="changePerPage(20)">20 &nbsp;/&nbsp;</span>
+      <span (click)="changePerPage(30)">30</span>
+    </div>
   <div class="proizvodi">
 
     <div *ngFor="let art of artikli |paginate:{ 
-    itemsPerPage:20, 
+    itemsPerPage:itemPerPage, 
     currentPage: p}">
       <mat-card>
 
-        <img mat-card-image (click)="openArtikal(art)" [src]="getImage(art.srcSlika)" alt="">
+        <img mat-card-image class="img" (click)="openArtikal(art)" [src]="getImage(art.srcSlika)" alt="">
         <div *ngIf="art.popust>0" class="popustProcenat">
           <h2 >-{{art.popust}}%</h2>
       </div>

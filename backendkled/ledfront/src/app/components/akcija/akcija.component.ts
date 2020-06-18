@@ -16,6 +16,7 @@ export class AkcijaComponent implements OnInit {
 
   public putanja = "http://localhost:3000/artikal/image/";
 
+  itemPerPage = 10;
   p:any;
   artikli:Array<Artikal[]>;
   ngOnInit(): void {
@@ -33,11 +34,13 @@ export class AkcijaComponent implements OnInit {
     return this.putanja + art;
   }
   openArtikal(art){
-
     this.router.navigate(['/artikal/'+art._id]);
-
-
   }
+  
+  changePerPage(br) {
+    this.itemPerPage = br;
+  }
+
   addShop(art){
     this.arikalService.addShop(art,1);
     this.snacBar.open('Uspesno dodato','Uredu',{duration:500})

@@ -1,41 +1,49 @@
 <div [ngStyle]="{'margin': '1rem'}"></div>
-  <div class="container-fluid">
-    <h1 class="text-primary">Akcijski proizvodi</h1>
-    <hr>
+<div class="container-fluid">
+  <h1 class="text-primary">Akcijski proizvodi</h1>
+  <hr>
 
-    <pagination-controls class="text-center myPagination" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
-      maxSize="5"> </pagination-controls>
-    <div class="proizvodi">
+  <pagination-controls class="text-center myPagination" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
+    maxSize="5"> </pagination-controls>
+  <div class="itemPer">
+    <span>Prikaži: &nbsp;</span>
+    <span (click)="changePerPage(10)">10 &nbsp;/&nbsp;</span>
+    <span (click)="changePerPage(20)">20 &nbsp;/&nbsp;</span>
+    <span (click)="changePerPage(30)">30</span>
+  </div>
+  <div class="proizvodi">
 
-      <div *ngFor="let art of artikli |paginate:{ 
-        itemsPerPage:20, 
+    <div *ngFor="let art of artikli |paginate:{ 
+        itemsPerPage:itemPerPage, 
         currentPage: p}">
-        <mat-card>
-         
-          <img (click)="openArtikal(art)" class="img"  mat-card-image [src]="getImage(art.srcSlika)" alt="">
-          <div *ngIf="art.popust>0" class="popustProcenat">
-            <h2 >-{{art.popust}}%</h2>
-        </div>
-          <div class="akcija">
-            <img *ngIf="art.akcija" src="../../../../assets/akcija.png" alt="">
-        </div>
-          <mat-card-content>
-            <h3 class="popust  text-danger"  *ngIf="art.popust > 0">  {{(art.cenaArtikla + (art.cenaArtikla*(art.popust/(100-art.popust)))) | number:'' }}</h3>
-            <h3>{{art.cenaArtikla | number:''}}.00</h3>
-           
-          </mat-card-content>
-            
-          <mat-card-title>{{art.nazivArtikla}} &nbsp; {{art.sifraArtikla}} </mat-card-title>
-          <button   mat-stroked-button color="accent" (click)="addShop(art)" [ngStyle]="{'width': '100%', 'outline': 'none'}" >
-            <mat-icon>add_shopping_cart</mat-icon>
-          </button>
-        
-         
-        </mat-card>
-      </div>
+      <mat-card>
 
+        <img (click)="openArtikal(art)" class="img" mat-card-image [src]="getImage(art.srcSlika)" alt="">
+        <div *ngIf="art.popust>0" class="popustProcenat">
+          <h2>-{{art.popust}}%</h2>
+        </div>
+        <div class="akcija">
+          <img *ngIf="art.akcija" src="../../../../assets/akcija.png" alt="">
+        </div>
+        <mat-card-content>
+          <h3 class="popust  text-danger" *ngIf="art.popust > 0">
+            {{(art.cenaArtikla + (art.cenaArtikla*(art.popust/(100-art.popust)))) | number:'' }}</h3>
+          <h3>{{art.cenaArtikla | number:''}}.00</h3>
+
+        </mat-card-content>
+
+        <mat-card-title>{{art.nazivArtikla}} &nbsp; {{art.sifraArtikla}} </mat-card-title>
+        <button mat-stroked-button color="accent" (click)="addShop(art)"
+          [ngStyle]="{'width': '100%', 'outline': 'none'}">
+          <mat-icon>add_shopping_cart</mat-icon>
+        </button>
+
+
+      </mat-card>
     </div>
 
-    <pagination-controls class="text-center myPagination" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
-      maxSize="5"> </pagination-controls>
   </div>
+
+  <pagination-controls class="text-center myPagination" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
+    maxSize="5"> </pagination-controls>
+</div>

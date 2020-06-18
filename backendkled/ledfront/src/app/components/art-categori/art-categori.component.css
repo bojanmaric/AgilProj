@@ -86,6 +86,11 @@ ngb-carousel{
 mat-card-actions{
   text-align: center;
 }
+
+mat-card .img:hover,
+    mat-card img:focus{
+    transform: scale(1.2);
+}
 mat-card-actions button{
     
     border: none;
@@ -96,4 +101,31 @@ mat-card-actions button{
     padding: 1rem;
     margin: 2rem;
     width: auto;
+}
+
+
+.itemPer{
+    text-align: right;
+    margin: 2rem ;
+    color: rgb(74, 150, 255);
+  
+}
+.itemPer span{
+    cursor: pointer;
+}
+.itemPer span:hover{
+    color: rgb(23, 68, 132);
+    
+}
+
+@media screen  and (max-width:480px){
+
+    .proizvodi{
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+   mat-card{
+       margin: .3rem .1rem;
+        width: 93%;
+   }
 }

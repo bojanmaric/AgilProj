@@ -18,12 +18,12 @@ export class HomeComponent implements OnInit {
 
   public putanja = "http://localhost:3000/artikal/image/";
 
-
   showSpiner = false;
-  artikli: Array<Artikal>=new Array<Artikal>();
+  artikli: Array<Artikal> = new Array<Artikal>();
   akcijski: Array<Artikal>;
   p: any;
-  ulogovan=false;
+  ulogovan = false;
+  itemPerPage = 10;
   constructor(config: NgbCarouselConfig,
     private artiService: ArtikalService,
     private router: Router,
@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit(): void {
     this.loadData();
-    this.ulogovan=this.logiService.isLogged();
+    this.ulogovan = this.logiService.isLogged();
   }
 
   loadData() {
@@ -48,12 +48,15 @@ export class HomeComponent implements OnInit {
       error => {
         this.snacBar.open("greska", "OK")
       });
-
   }
   getImage(art) {
-
     return this.putanja + art;
   }
+
+  changePerPage(br) {
+    this.itemPerPage = br;
+  }
+
 
   deleteArt(art) {
     this.showSpiner = true;
@@ -64,11 +67,8 @@ export class HomeComponent implements OnInit {
         if (res['success']) {
           this.loadData();
           this.snacBar.open("Uspesno ste obrisali", "Uredu", { duration: 2000 });
-
-
         } else {
           this.snacBar.open("Greska prilikom brisanja", "Uredu", { duration: 2000 })
-
         }
 
       }, error => {
@@ -94,16 +94,13 @@ export class HomeComponent implements OnInit {
       }
     })
   }
-  openArtikal(art){
-
-    this.router.navigate(['/artikal/'+art._id]);
-
-
+  openArtikal(art) {
+    this.router.navigate(['/artikal/' + art._id]);
   }
 
-  addShop(art){
-     this.artiService.addShop(art,1);
-     this.snacBar.open('Uspesno dodato','Uredu',{duration:500})
+  addShop(art) {
+    this.artiService.addShop(art, 1);
+    this.snacBar.open('Uspesno dodato', 'Uredu', { duration: 500 })
   }
 
 }

@@ -25,6 +25,7 @@ export class ArtCategoriComponent implements OnInit {
   artikliSort: Array<Artikal> = new Array<Artikal>();
   artikli: Array<Artikal> = new Array<Artikal>();
   pun=true;
+  itemPerPage = 10;
 
   public putanja = "http://localhost:3000/artikal/image/";
 
@@ -65,6 +66,9 @@ export class ArtCategoriComponent implements OnInit {
     this.router.navigate(['/artikal/'+art._id]);
 
 
+  }
+  changePerPage(br) {
+    this.itemPerPage = br;
   }
 
   

@@ -106,6 +106,19 @@ mat-card .img:hover,
     mat-card img:focus{
     transform: scale(1.2);
 }
+.itemPer{
+    text-align: right;
+    margin: 2rem ;
+    color: rgb(74, 150, 255);
+  
+}
+.itemPer span{
+    cursor: pointer;
+}
+.itemPer span:hover{
+    color: rgb(23, 68, 132);
+    
+}
 
 mat-card-title{
     text-align: center;
