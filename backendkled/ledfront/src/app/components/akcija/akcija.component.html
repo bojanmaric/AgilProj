@@ -1,8 +1,9 @@
 <div [ngStyle]="{'margin': '1rem'}"></div>
 <div class="container-fluid">
-  <h1 class="text-primary">Akcijski proizvodi</h1>
-  <hr>
 
+  <h1 class="text-primary" [ngStyle]="{'margin':'2rem 0 0 1.1rem'}">Akcijski proizvodi</h1>
+
+  <hr [ngStyle]="{'width':'50px', 'height': '3px', 'background-color':'#007bff','margin-left':'20px','margin-top':'5px'}">
   <pagination-controls class="text-center myPagination" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
     maxSize="5"> </pagination-controls>
   <div class="itemPer">

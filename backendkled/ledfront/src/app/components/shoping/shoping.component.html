@@ -30,13 +30,13 @@
             </th>
         </tr>
 
-        <tr *ngFor="let art of artikli">
+        <tr *ngFor="let art of artikli ; index as i">
 
                 <td ><button mat-mini-fab color="warn" (click)="brisiShop(art)"> <mat-icon >delete</mat-icon> </button></td>
                 <td><img [src]="getImage(art.srcSlika)" width="100px"  alt=""></td>
                 <td><h3>{{art.nazivArtikla}}</h3></td>
                 <td><h3>{{art.cenaArtikla}}.00</h3></td>
-                <td>{{art.kolicina}} kom</td>
+                <td>   <span class="plm" (click)="minus(i)">-</span> {{art.kolicina}}    <span  class="plm" (click)="plus(i)">+</span></td>
                 <td>{{art.ukupno}}.00</td>
         </tr>
     </table>

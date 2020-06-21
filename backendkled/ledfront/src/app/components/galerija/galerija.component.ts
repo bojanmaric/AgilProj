@@ -4,6 +4,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { error } from 'protractor';
 import { LoginService } from 'src/app/servisi/login.service';
+import { MatDialog } from '@angular/material/dialog';
+import { SlikaComponent } from '../dialogs/slika/slika.component';
 
 @Component({
   selector: 'app-galerija',
@@ -12,7 +14,7 @@ import { LoginService } from 'src/app/servisi/login.service';
 })
 export class GalerijaComponent implements OnInit {
 
-  constructor(private galeriService:GalleryService, private snackBar:MatSnackBar,private loggingService:LoginService) { }
+  constructor(private galeriService:GalleryService, private snackBar:MatSnackBar,private loggingService:LoginService, public dialog:MatDialog) { }
 
   galleryImg:Array<string[]>;
   public ruta = "http://localhost:3000/gallery/image/"
@@ -52,6 +54,11 @@ ulogovanIn() {
   return false;
 }
 
+openDialog(slika){
+  const dialogRef=this.dialog.open(SlikaComponent,{width:'60vw'});
+
+  dialogRef.componentInstance.slika=slika;
+}
 
   getImage(gal){
     return this.ruta+gal

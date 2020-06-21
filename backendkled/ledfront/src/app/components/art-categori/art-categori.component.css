@@ -18,6 +18,9 @@ mat-card .akcija{
     top: -2px;
     width: 30%;
 }
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: -1px 0 5px 0 rgb(118, 118, 118);
+}
 .akcija img{
     width: 100%;
 }

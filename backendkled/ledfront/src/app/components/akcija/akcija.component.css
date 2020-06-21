@@ -106,6 +106,9 @@ mat-card-actions button{
     color: rgb(74, 150, 255);
   
 }
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: -1px 0 5px 0 rgb(118, 118, 118);
+}
 .itemPer span{
     cursor: pointer;
 }

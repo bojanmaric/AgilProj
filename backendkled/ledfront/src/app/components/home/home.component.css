@@ -71,11 +71,13 @@ mat-card img{
 }
 .grid{
     width: 70%;
-    margin: 1rem auto;
-}
-mat-grid-list{
     
     box-shadow: -3px 0 7px 0 rgb(118, 118, 118);
+    margin: 1rem auto;
+}
+.grid img{
+    width: 100%;
+    
 }
 mat-card .akcija{
     position: absolute;
@@ -135,13 +137,14 @@ mat-card-title{
     color: rgb(74, 150, 255);
    
 }
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: -1px 0 7px 0 rgb(118, 118, 118);
+}
 mat-card{
     width: 200px;
    position: relative;
     margin: 1rem .5rem ;
     overflow: hidden;
-  
-   
     
 }
 

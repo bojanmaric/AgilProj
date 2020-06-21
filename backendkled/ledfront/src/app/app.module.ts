@@ -40,6 +40,7 @@ import { AkcijaComponent } from './components/akcija/akcija.component';
 import { AOS }from 'aos';
 import { KataloziComponent } from './components/katalozi/katalozi.component';
 import { AddKatalogComponent } from './adding/add-katalog/add-katalog.component';
+import { SlikaComponent } from './components/dialogs/slika/slika.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { AddKatalogComponent } from './adding/add-katalog/add-katalog.component'
     PorudzbineComponent,
     AkcijaComponent,
     KataloziComponent,
-    AddKatalogComponent
+    AddKatalogComponent,
+    SlikaComponent
   ],
   imports: [
     BrowserModule,

@@ -55,7 +55,14 @@ export class ShopingComponent implements OnInit {
   getImage(art){
     return this.ruta+art;
   }
-
+  plus(i) {
+   this.artikli[i].kolicina++
+  }
+  minus(i) {
+     if ((this.artikli[i].kolicina - 1) > 0) {
+      this.artikli[i].kolicina--
+    } 
+  }
 
 
 }

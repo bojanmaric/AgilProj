@@ -1,15 +1,16 @@
 <div class="home">
   <div class="grid">
-    <mat-grid-list cols="3" rowHeight="4:3">
+    <img src="../../../assets/home/pozz.png" alt="">
+    <!-- <mat-grid-list cols="3" rowHeight="4:3">
       
-      <mat-grid-tile colspan=3><img src="../../../assets/home/pozz.png" alt=""></mat-grid-tile>
+      <mat-grid-tile colspan=3></mat-grid-tile>
     
-     <!--  <mat-grid-tile><img src="../../../assets/home/0011073a_2.jpg" alt=""></mat-grid-tile>
+       <mat-grid-tile><img src="../../../assets/home/0011073a_2.jpg" alt=""></mat-grid-tile>
       <mat-grid-tile><img src="../../../assets/home/617F+npSj6L._AC_SX466_.jpg" alt=""></mat-grid-tile>
       <mat-grid-tile><img src="../../../assets/home/black-modern-chandelier-4-light-5-light-santurn-ii-led-collection-pendant-light-fixture-cord-adjustable-brushed-aluminum-circular-led-chandelier-warm-white-neutral-li.jpg" alt=""></mat-grid-tile>
   
- -->
-    </mat-grid-list>
+ 
+    </mat-grid-list> -->
   </div>
   <ngb-carousel>
     <ng-template ngbSlide>
@@ -52,6 +53,7 @@
     <h1 class="text-primary" [ngStyle]="{'margin':'2rem 0 0 1.1rem'}">Akcijski proizvodi</h1>
 
     <hr [ngStyle]="{'width':'50px', 'height': '3px', 'background-color':'#007bff','margin-left':'20px','margin-top':'5px'}">
+    
     <pagination-controls class="text-center myPagination" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
       maxSize="5"> </pagination-controls>
     <div class="itemPer">

@@ -11,6 +11,9 @@ mat-card-content{
     grid-template-columns: repeat(2,1fr);
     
 }
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: -1px 0 5px 0 rgb(118, 118, 118);
+}
 mat-card .akcija{
     position: absolute;
     right: 0;
