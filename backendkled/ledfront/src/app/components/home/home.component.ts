@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   public putanja = "http://localhost:3000/artikal/image/";
 
   showSpiner = false;
-  artikli: Array<Artikal> = new Array<Artikal>();
+  //artikli: Array<Artikal> = new Array<Artikal>();
   akcijski: Array<Artikal>;
   p: any;
   ulogovan = false;
@@ -45,12 +45,18 @@ export class HomeComponent implements OnInit {
   }
 
   loadData() {
-    this.artiService.getAllArtikle().subscribe(res => {
+    this.artiService.akcijskiArt().subscribe(
+      res=>{
+        this.akcijski=res['artikli'];
+      }
+    )
+    this.artiService.getAllArtikle().subscribe();
+      /*res => {
       this.artikli = res['artikli'];
     },
       error => {
         this.snacBar.open("greska", "OK")
-      });
+      });*/
   }
   getImage(art) {
     return this.putanja + art;

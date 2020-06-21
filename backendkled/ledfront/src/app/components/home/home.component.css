@@ -1,8 +1,4 @@
-/*
-.home{
 
-}
-*/
 .slideimg img{
     
     width: 100%;
@@ -15,11 +11,7 @@
     -webkit-text-stroke-color: black; 
 
 }
-/*
-mat-card:hover .shopCartBtn{
-    display: initial;
-    transition: 1s;
-}*/
+
 .shopCartBtn{
 
     width: 100%; 
@@ -82,7 +74,7 @@ mat-card img{
 mat-card .akcija{
     position: absolute;
     right: -2px;
-    top: -2px;
+    top: -4px;
     width: 30%;
 }
 .akcija img{
@@ -160,6 +152,9 @@ mat-card-actions button{
 
 ngb-carousel{
     z-index: 0;
+    box-shadow: 0 0 10px 0 rgb(118, 118, 118);
+
+    outline: none;
 }
 .spinerr{
     position: absolute;
