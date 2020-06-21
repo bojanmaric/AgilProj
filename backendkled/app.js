@@ -8,7 +8,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var artikalRouter = require('./routes/artikal');
 var porudzbinaRouter=require('./routes/porudzbina');
-var galleriRouter=require('./routes/gallery')
+var galleriRouter=require('./routes/gallery');
+var katalogRouter=require('./routes/katalog');
+
 
 
 
@@ -44,6 +46,8 @@ app.use('/users', usersRouter);
 app.use('/artikal',artikalRouter);
 app.use('/porudzbina',porudzbinaRouter);
 app.use('/gallery',galleriRouter);
+app.use('/katalog',katalogRouter);
+
 
 
 

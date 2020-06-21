@@ -14,8 +14,8 @@ mat-card-content{
 
 mat-card .akcija{
     position: absolute;
-    right: 0;
-    top: 0;
+    right: -2px;
+    top: -2px;
     width: 30%;
 }
 .akcija img{

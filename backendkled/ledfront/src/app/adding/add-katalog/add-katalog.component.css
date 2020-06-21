@@ -1,0 +1,39 @@
+.addkatalog{
+    width: 70%;
+    margin: 5rem auto;
+    display: block;
+    padding: 2rem;
+    box-shadow: 0 2px 5px 0 rgb(201, 201, 201);
+}
+.addkatalog .form-group{
+    text-align: center;
+    
+}
+.centrirati{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.addkatalog mat-form-field{
+   
+    margin: .5rem;
+}
+.addkatalog .form-group label{
+    font-size: 24px;
+    text-align: center;
+    color: rgb(6, 98, 191);
+    
+}
+.buttons{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+ .buttons button{
+    width: 90%;
+    margin: auto;
+}
+
+@media screen and (max-width:768px){
+    .centrirati{
+        grid-template-columns: 100%;
+    }
+}

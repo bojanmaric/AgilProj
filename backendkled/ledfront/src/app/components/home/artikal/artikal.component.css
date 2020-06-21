@@ -12,8 +12,8 @@
 }
 .artikal .slika .akcija{
     position: absolute;
-    right: 0;
-    top: 0;
+    right: -3px;
+    top: -3px;
     width: 30%;
 }
 .popust{

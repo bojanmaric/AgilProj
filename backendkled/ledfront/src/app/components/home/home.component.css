@@ -66,13 +66,21 @@ mat-card-title button:hover{
 mat-card img{
     
     transition: .7s;
-    height: auto;
+   
 
+}
+.grid{
+    width: 70%;
+    margin: 1rem auto;
+}
+mat-grid-list{
+    
+    box-shadow: -3px 0 7px 0 rgb(118, 118, 118);
 }
 mat-card .akcija{
     position: absolute;
-    right: 0;
-    top: 0;
+    right: -2px;
+    top: -2px;
     width: 30%;
 }
 .akcija img{

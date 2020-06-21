@@ -1,0 +1,25 @@
+<div class="addkatalog">
+
+    <div class="centrirati">
+        <mat-form-field appearance="fill">
+            <mat-label>Link kataloga</mat-label>
+            <input type="text" matInput [(ngModel)]="link" name="link" placeholder="Link kataloga">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Naziv kataloga</mat-label>
+            <input type="text" matInput [(ngModel)]="nazivKataloga" name="nazivKataloga" placeholder="Naziv Kataloga">
+        </mat-form-field>
+    </div>
+    <div class="form-group">
+        <label for="slika">Slika</label>
+        <input type="file" (change)="onImageAdded($event)" class="form-control-file" required>
+    </div>
+
+    <div class="buttons">
+        <button color="primary" mat-raised-button (click)="add()">Dodaj</button>
+        <button color="warn" mat-raised-button (click)="reset()">Reset</button>
+    </div>
+
+
+
+</div>

@@ -39,6 +39,7 @@ import { PorudzbineComponent } from './admin/porudzbine/porudzbine.component';
 import { AkcijaComponent } from './components/akcija/akcija.component';
 import { AOS }from 'aos';
 import { KataloziComponent } from './components/katalozi/katalozi.component';
+import { AddKatalogComponent } from './adding/add-katalog/add-katalog.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { KataloziComponent } from './components/katalozi/katalozi.component';
     InboxComponent,
     PorudzbineComponent,
     AkcijaComponent,
-    KataloziComponent
+    KataloziComponent,
+    AddKatalogComponent
   ],
   imports: [
     BrowserModule,

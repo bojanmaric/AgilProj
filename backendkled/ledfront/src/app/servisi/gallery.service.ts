@@ -30,12 +30,12 @@ export class GalleryService {
 
   }
   brisiSliku(id,slika){
-    this.delSliku(slika).subscribe()
+    this.delSliku(slika)
     return this.http.delete(this.ruta+'/delete/'+id);
   }
 
   delSliku(image){
-    return this.http.delete(this.ruta+'/brisi/'+image)
+     this.http.delete(this.ruta+'/brisi/'+image).subscribe()
 
   }
 

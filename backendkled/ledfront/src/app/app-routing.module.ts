@@ -20,12 +20,13 @@ import { ProfileComponent } from './admin/profile/profile.component';
 import { InboxComponent } from './admin/inbox/inbox.component';
 import { AkcijaComponent } from './components/akcija/akcija.component';
 import { KataloziComponent } from './components/katalozi/katalozi.component';
+import { AddKatalogComponent } from './adding/add-katalog/add-katalog.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'addGallery', component: AddgalleryComponent, canActivate: [AuthGuard] },/* canActivate:[AuthGuard]*/
+  { path: 'addGallery', component: AddgalleryComponent, canActivate: [AuthGuard] },
   { path: 'addArtical', component: AddartComponent, canActivate: [AuthGuard] },
   { path: 'katalozi', component: KataloziComponent }, 
   { path: 'login', component: LoginComponent },
@@ -39,7 +40,9 @@ const routes: Routes = [
   { path: 'porudzbenice', component: PorudzbineComponent, canActivate: [AuthGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'inbox', component: InboxComponent, canActivate: [AuthGuard] },
-  { path: 'akcija', component: AkcijaComponent }
+  { path: 'akcija', component: AkcijaComponent },
+  { path: 'addKatalog', component: AddKatalogComponent, canActivate: [AuthGuard]  }
+
 
 
 ];

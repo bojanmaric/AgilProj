@@ -6,7 +6,10 @@ import { LoginService } from 'src/app/servisi/login.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Artikal } from 'src/app/model/Artikal';
 import { MatDialog } from '@angular/material/dialog';
-import { EditArtDialogComponent } from '../dialogs/edit-art-dialog/edit-art-dialog.component'
+import { EditArtDialogComponent } from '../dialogs/edit-art-dialog/edit-art-dialog.component';
+
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

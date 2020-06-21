@@ -1,79 +1,17 @@
 <div class="katalozi">
 
-    <div class="katalog">
-        <a target="_blank" href="    http://rabalux.com/images/nagy_katalogusok_osszes/Rabalux_catalogue_2020_ALL-comingsoon-150dpi.pdf">
-            <div class="img">
-                <img src="../../../assets/katalozi/Rabalux borito 2020-2021.jpg" alt="">
-            </div>
-            <h3>Rabalux 2020/2021</h3>
-        </a>
-    </div>
-    <div class="katalog">
-        <a target="_blank" href="http://rabalux.rs/images/katalogusok/RL_Katalogus_2019-20-072.pdf">
-            <div class="img">
-                <img src="../../../assets/katalozi/2019-00_Katalogus_Borito_2019-20.jpg" alt="">
-            </div>
-            <h3>Rabalux 2019/2020</h3>
-        </a>
-    </div>
+   
+    <div *ngFor="let katalog of katalozi">
+        <div class="katalog">
+            <button *ngIf="ulogovanIn()" mat-mini-fab (click)="brisiKatalog(katalog)" color="warn"><mat-icon>delete</mat-icon></button>
+            <a target="_blank" href="{{katalog.link}}">
+                <div class="img">
+                    <img  [src]="getImage(katalog.srcSlika)" alt="">
+                </div>
+                <h3>{{katalog.nazivKataloga}}</h3>
+            </a>
+        </div>
 
-    <div class="katalog">
-        <a target="_blank" href="https://eglo.cld.bz/interior">
-            <div class="img">
-                <img src="../../../assets/katalozi/unutrasnja-rasveta-thumbb.png" alt="">
-            </div>
-            <h3>Eglo 2019/2020</h3>
-        </a>
-    </div>
-
-    <div class="katalog">
-        <a target="_blank" href="http://rabalux.com/images/RL-Kulteri-NP-2020_72.pdf">
-            <div class="img">
-                <img src="../../../assets/katalozi/2020 Kültéri brosúra.jpg" alt="">
-            </div>
-            <h3>Spoljna rasveta Rabalux 2020</h3>
-        </a>
-    </div>
-
-    <div class="katalog">
-        <a target="_blank" href="https://eglo.cld.bz/outdoor">
-            <div class="img">
-                <img src="../../../assets/katalozi/katalog-eglo-spoljna-rasveta-2017.jpg" alt="">
-            </div>
-            <h3>Eglo spoljna rasveta 2016/2017</h3>
-        </a>
-    </div>
-    <div class="katalog">
-        <a target="_blank" href="https://v-tac.eu/images/catalog/Q1-2019.pdf">
-            <div class="img">
-                <img src="../../../assets/katalozi/vtak.jpg" alt="">
-            </div>
-            <h3>V-tac 2019</h3>
-        </a>
-    </div>
-    <div class="katalog">
-        <a target="_blank" href="https://eglo.cld.bz/vintage">
-            <div class="img">
-                <img src="../../../assets/katalozi/vintage_thumbnail_embed.png" alt="">
-            </div>
-            <h3>Eglo vintage 2018/2019</h3>
-        </a>
-    </div>
-    <div class="katalog">
-        <a target="_blank" href="https://cld.bz/8JSwBMi">
-            <div class="img">
-                <img src="../../../assets/katalozi/eglo-2018-2019.jpg" alt="">
-            </div>
-            <h3>Eglo unutrašnja rasveta 2018-2019</h3>
-        </a>
-    </div>
-    <div class="katalog">
-        <a target="_blank" href="http://rabalux.rs/images/katalogusok/Technikai-Brossura-2018_150.pdf">
-            <div class="img">
-                <img src="../../../assets/katalozi/rabalux-2018.jpg" alt="">
-            </div>
-            <h3>Rabalux 2018</h3>
-        </a>
     </div>
 
 </div>

@@ -1,5 +1,16 @@
 <div class="home">
-
+  <div class="grid">
+    <mat-grid-list cols="3" rowHeight="4:3">
+      
+      <mat-grid-tile colspan=3><img src="../../../assets/home/pozz.png" alt=""></mat-grid-tile>
+    
+     <!--  <mat-grid-tile><img src="../../../assets/home/0011073a_2.jpg" alt=""></mat-grid-tile>
+      <mat-grid-tile><img src="../../../assets/home/617F+npSj6L._AC_SX466_.jpg" alt=""></mat-grid-tile>
+      <mat-grid-tile><img src="../../../assets/home/black-modern-chandelier-4-light-5-light-santurn-ii-led-collection-pendant-light-fixture-cord-adjustable-brushed-aluminum-circular-led-chandelier-warm-white-neutral-li.jpg" alt=""></mat-grid-tile>
+  
+ -->
+    </mat-grid-list>
+  </div>
   <ngb-carousel>
     <ng-template ngbSlide>
       <div class="slideimg">
@@ -35,22 +46,12 @@
   <div [ngStyle]="{'margin': '1rem'}"></div>
   <div class="container">
 
-
-    <!--     <mat-grid-list cols="3" rowHeight="4:3">
-      <mat-grid-tile rowspan="2"> <img src="../../../assets/home/sli.jfif" alt=""></mat-grid-tile>
-      <mat-grid-tile><img src="../../../assets/home/slikaGrid.jpg" alt=""></mat-grid-tile>
-      <mat-grid-tile><img src="../../../assets/home/download.jfif" alt=""></mat-grid-tile>
-      <mat-grid-tile><img src="../../../assets/home/images (2).jfif" alt=""></mat-grid-tile>
-      <mat-grid-tile rowspan=2><img src="../../../assets/home/images (1).jfif" alt=""></mat-grid-tile>
-      <mat-grid-tile colspan=2><img src="../../../assets/home/pozz.png" alt=""></mat-grid-tile>
+    
 
 
-    </mat-grid-list> -->
+    <h1 class="text-primary" [ngStyle]="{'margin':'2rem 0 0 1.1rem'}">Akcijski proizvodi</h1>
 
-
-    <h1 class="text-primary">Akcijski proizvodi</h1>
-
-    <hr>
+    <hr [ngStyle]="{'width':'50px', 'height': '3px', 'background-color':'#007bff','margin-left':'20px','margin-top':'5px'}">
     <pagination-controls class="text-center myPagination" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
       maxSize="5"> </pagination-controls>
     <div class="itemPer">
@@ -64,6 +65,7 @@
       <div *ngFor="let art of artikli |paginate:{ 
         itemsPerPage:itemPerPage, 
         currentPage: p}">
+
         <mat-card>
 
           <img (click)="openArtikal(art)" class="img" mat-card-image [src]="getImage(art.srcSlika)" alt="">

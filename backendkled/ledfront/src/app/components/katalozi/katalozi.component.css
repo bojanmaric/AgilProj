@@ -11,6 +11,8 @@
     border-radius: 5px;
     overflow: hidden;
     margin: 1rem;
+    position: relative;
+
 }
 .katalog a{
     text-decoration: none;
@@ -36,4 +38,12 @@
     text-align: center;
     color: rgb(4, 91, 93);
 
+}
+
+button{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    outline: none;
+    
 }

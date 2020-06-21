@@ -14,57 +14,55 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 /* @Pipe({name: 'round'}) */
 export class ArtikalComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,private router:Router, private artiService: ArtikalService, private snackBar:MatSnackBar) { }
+  constructor(private route: ActivatedRoute, private router: Router, private artiService: ArtikalService, private snackBar: MatSnackBar) { }
 
   public putanja = "http://localhost:3000/artikal/image/";
 
   artikal: Artikal;
   id: any
-  kolicina=0;
+  kolicina = 1;
   slicniArtikli: Array<Artikal> = new Array<Artikal>();
+  
   ngOnInit(): void {
-   
-   this.loadArt();
-
+    this.loadArt();
   }
-  loadArt(){
+  loadArt() {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.id = params.get('id');
       this.artiService.getArtikalbyId(this.id).subscribe(
         res => {
-          
           this.artikal = res['artikal'];
-          this.slicniArtikli=this.artiService.getArt(this.artikal.kategorija, this.artikal.vrstaProizvoda)
-          
-        
+          this.slicniArtikli = this.artiService.getArt(this.artikal.kategorija, this.artikal.vrstaProizvoda)
+        }, error => {
+          console.log(error)
         }
       );
     })
-
-
   }
 
-  plus(){
+  plus() {
     this.kolicina++
   }
-  minus(){
-    if((this.kolicina-1)>0){
-        this.kolicina--
+  minus() {
+    if ((this.kolicina - 1) > 0) {
+      this.kolicina--
     }
   }
-  addShop(art){
-    this.artiService.addShop(art,this.kolicina);
-    this.snackBar.open('Uspesno dodato','Uredu',{duration:500})
+  addShop(art) {
+    this.artiService.addShop(art, this.kolicina);
+    this.snackBar.open('Uspesno dodato', 'Uredu', { duration: 500 })
 
   }
 
-  openArtikal(art){
-    this.router.navigate(['/artikal/',art._id])
+  openArtikal(art) {
+    this.router.navigate(['/artikal/', art._id])
   }
-  
 
-  getImage(art){
-    return this.putanja+art;
+  getImageArt() {
+    return this.putanja + this.artikal.srcSlika
+  }
+  getImage(art) {
+    return this.putanja + art;
   }
 
 }
