@@ -181,6 +181,10 @@ ngb-carousel{
     }
    mat-card{
        margin: .3rem .1rem;
-        width: 93%;
+        width: 95%;
    }
+   mat-card-content{
+       grid-template-columns: 100%;
+   }
+
 }
