@@ -43,7 +43,7 @@ export class AddartComponent implements OnInit {
  
 
   ngOnInit(): void {
-    document.querySelector('body').scrollTo(0, 0)
+    
   }
   resetForm() {
     this.artikal.reset;
@@ -63,6 +63,7 @@ export class AddartComponent implements OnInit {
       this.artiService.addArtikal(this.artikal,this.slika).subscribe(
         res=>{
           this.pokazi=false;
+          this.artiService.getAllArtikle().subscribe()
           this._snackBar.open('Uspešno dodat artikal', 'Close', { duration: 2500 });
       },
       error=>{

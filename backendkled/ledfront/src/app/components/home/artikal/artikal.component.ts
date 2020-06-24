@@ -17,6 +17,8 @@ export class ArtikalComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private artiService: ArtikalService, private snackBar: MatSnackBar) { }
 
   public putanja = "http://localhost:3000/artikal/image/";
+ // public putanja = "/artikal/image/";
+
 
   artikal: Artikal;
   id: any
@@ -24,15 +26,23 @@ export class ArtikalComponent implements OnInit {
   slicniArtikli: Array<Artikal> = new Array<Artikal>();
   
   ngOnInit(): void {
+    this.artiService.getAllArtikle().subscribe();
     this.loadArt();
   }
   loadArt() {
     this.route.paramMap.subscribe((params: ParamMap) => {
+      
       this.id = params.get('id');
+      
       this.artiService.getArtikalbyId(this.id).subscribe(
         res => {
           this.artikal = res['artikal'];
-          this.slicniArtikli = this.artiService.getArt(this.artikal.kategorija, this.artikal.vrstaProizvoda)
+
+          this.artiService.getAllArtikle().subscribe(
+            data=>{
+              this.slicniArtikli=data['artikli'].filter((kat) => kat.kategorija === this.artikal.kategorija && kat.vrstaProizvoda === this.artikal.vrstaProizvoda);
+            }
+          )
         }, error => {
           console.log(error)
         }

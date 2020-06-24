@@ -90,3 +90,8 @@ mat-card-actions button{
     border: none;
     outline: none;
 }
+
+mat-card .img {
+    height: 150px;
+}
+

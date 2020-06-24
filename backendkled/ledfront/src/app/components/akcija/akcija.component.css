@@ -117,6 +117,10 @@ mat-card-actions button{
     
 }
 
+mat-card .img {
+    height: 200px;
+  }
+
    
 @media screen  and (max-width:480px){
 
@@ -128,4 +132,9 @@ mat-card-actions button{
        margin: .3rem .1rem;
         width: 93%;
    }
+
+   mat-card .img {
+    height: 150px;
+  }
+
 }

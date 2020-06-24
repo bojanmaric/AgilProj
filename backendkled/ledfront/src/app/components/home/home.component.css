@@ -1,190 +1,225 @@
+.slideimg img {
 
-.slideimg img{
-    
-    width: 100%;
+  width: 100%;
 }
+
 .lepas {
-    
-    color: white; 
-    
-    -webkit-text-stroke-width: 1px; 
-    -webkit-text-stroke-color: black; 
+
+  color: white;
+
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 
 }
 
-.shopCartBtn{
+.shopCartBtn {
 
-    width: 100%; 
-    outline: none;
-    transition: 1s;
-}
-.proizvodi{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-}
-mat-grid-tile img{
-    width: 100%;
-    height: 100%;
-     
-}
-mat-card-content{
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    
-    
-}
-mat-card-content h3{
-    width: 100%;
-    margin: auto;
-
-    font-weight: 500;
-    font-size: 20px;
-    color: #a47a06;
-}
-mat-card-title button{
-    
-    margin-left: 50%;
-   outline: none;
-   transition: .6s;
-}
-mat-card-title button:hover{
-    color: #68049d;
-    background: #dcdcdc;
-
-}
-mat-card img{
-    
-    transition: .7s;
-   
-
-}
-.grid{
-    width: 70%;
-    
-    box-shadow: -3px 0 7px 0 rgb(118, 118, 118);
-    margin: 1rem auto;
-}
-.grid img{
-    width: 100%;
-    
-}
-mat-card .akcija{
-    position: absolute;
-    right: -2px;
-    top: -4px;
-    width: 30%;
-}
-.akcija img{
-    width: 100%;
-}
-.popust{
-    text-decoration-line: line-through;
-    font-size: 13px!important;
+  width: 100%;
+  outline: none;
+  transition: 1s;
 }
 
-.popustProcenat{
-    position: absolute;
-    top: 0;
-    border-radius: 0 0 8px;
-    
-    left: 0;
-    background-color: rgb(17, 177, 9);
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    width: 50px;
-    max-width: 80px;
-    height: 30px;
-    text-align: center;
-    
+.proizvodi {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
 }
-.popustProcenat h2{
-    font-size: 16px;
+
+mat-grid-tile img {
+  width: 100%;
+  height: 100%;
+
 }
+
+mat-card-content {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+
+}
+
+mat-card-content h3 {
+  width: 100%;
+  margin: auto;
+
+  font-weight: 500;
+  font-size: 20px;
+  color: #a47a06;
+}
+
+mat-card-title button {
+
+  margin-left: 50%;
+  outline: none;
+  transition: .6s;
+}
+
+mat-card-title button:hover {
+  color: #68049d;
+  background: #dcdcdc;
+
+}
+
+mat-card img {
+
+  transition: .7s;
+
+
+}
+
+.grid {
+  width: 70%;
+
+  box-shadow: -3px 0 7px 0 rgb(118, 118, 118);
+  margin: 1rem auto;
+}
+
+.grid img {
+  width: 100%;
+
+}
+
+mat-card .akcija {
+  position: absolute;
+  right: -2px;
+  top: -4px;
+  width: 30%;
+}
+
+.akcija img {
+  width: 100%;
+}
+
+.popust {
+  text-decoration-line: line-through;
+  font-size: 13px !important;
+}
+
+.popustProcenat {
+  position: absolute;
+  top: 0;
+  border-radius: 0 0 8px;
+
+  left: 0;
+  background-color: rgb(17, 177, 9);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  max-width: 80px;
+  height: 30px;
+  text-align: center;
+
+}
+
+.popustProcenat h2 {
+  font-size: 16px;
+}
+
 mat-card .img:hover,
-    mat-card img:focus{
-    transform: scale(1.2);
-}
-.itemPer{
-    text-align: right;
-    margin: 2rem ;
-    color: rgb(74, 150, 255);
-  
-}
-.itemPer span{
-    cursor: pointer;
-}
-.itemPer span:hover{
-    color: rgb(23, 68, 132);
-    
+mat-card img:focus {
+  transform: scale(1.2);
 }
 
-mat-card-title{
-    text-align: center;
-    font-size: 13px!important;
-    text-transform: uppercase;
-    color: rgb(74, 150, 255);
-   
+.itemPer {
+  text-align: right;
+  margin: 2rem;
+  color: rgb(74, 150, 255);
+
 }
+
+.itemPer span {
+  cursor: pointer;
+}
+
+.itemPer span:hover {
+  color: rgb(23, 68, 132);
+
+}
+
+mat-card-title {
+  text-align: center;
+  font-size: 13px !important;
+  text-transform: uppercase;
+  color: rgb(74, 150, 255);
+
+}
+
 .mat-card:not([class*=mat-elevation-z]) {
-    box-shadow: -1px 0 7px 0 rgb(118, 118, 118);
-}
-mat-card{
-    width: 200px;
-   position: relative;
-    margin: 1rem .5rem ;
-    overflow: hidden;
-    
+  box-shadow: -1px 0 7px 0 rgb(118, 118, 118);
 }
 
-mat-card-actions{
+mat-card {
+  width: 200px;
+  position: relative;
+  margin: 1rem .5rem;
+  overflow: hidden;
+
+}
+
+mat-card-actions {
   text-align: center;
 }
-mat-card-actions button{
-    
-    
-    border: none;
-    outline: none;
+
+mat-card-actions button {
+
+
+  border: none;
+  outline: none;
 }
 
-ngb-carousel{
-    z-index: 0;
-    box-shadow: 0 0 10px 0 rgb(118, 118, 118);
+ngb-carousel {
+  z-index: 0;
+  box-shadow: 0 0 10px 0 rgb(118, 118, 118);
 
-    outline: none;
+  outline: none;
 }
-.spinerr{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    opacity: .8;
-    background: rgb(81, 81, 81);
-    position: fixed;
+
+.spinerr {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: .8;
+  background: rgb(81, 81, 81);
+  position: fixed;
 
 }
-.spinerr mat-spinner{
-    top: 40%;
-    color: rgb(152, 4, 4)!important;
-}
-@media screen  and (max-width:480px){
 
-    .proizvodi{
-        display: grid;
-        grid-template-columns: 50% 50%;
-    }
-   mat-card{
-       margin: .3rem .1rem;
-        width: 95%;
-   }
-   mat-card-content{
-       grid-template-columns: 100%;
-   }
+.spinerr mat-spinner {
+  top: 40%;
+  color: rgb(152, 4, 4) !important;
+}
+
+
+mat-card .img {
+  height: 200px;
+}
+
+@media screen and (max-width:480px) {
+
+  .proizvodi {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  mat-card {
+    margin: .3rem .1rem;
+    width: 95%;
+  }
+
+
+  mat-card .img {
+    height: 150px;
+  }
+
+  mat-card-content {
+    grid-template-columns: 100%;
+  }
 
 }

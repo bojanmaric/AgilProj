@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   akcijski: Array<Artikal>;
   p: any;
   ulogovan = false;
-  itemPerPage = 10;
+  itemPerPage = 20;
   constructor(config: NgbCarouselConfig,
     private artiService: ArtikalService,
     private router: Router,
@@ -51,12 +51,7 @@ export class HomeComponent implements OnInit {
       }
     )
     this.artiService.getAllArtikle().subscribe();
-      /*res => {
-      this.artikli = res['artikli'];
-    },
-      error => {
-        this.snacBar.open("greska", "OK")
-      });*/
+      
   }
   getImage(art) {
     return this.putanja + art;

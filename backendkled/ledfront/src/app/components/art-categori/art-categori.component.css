@@ -1,134 +1,157 @@
-
-.proizvodi{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.proizvodi {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
 }
 
-mat-card-content{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    
+mat-card-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
 }
 
-mat-card .akcija{
-    position: absolute;
-    right: -2px;
-    top: -2px;
-    width: 30%;
+mat-card .akcija {
+  position: absolute;
+  right: -2px;
+  top: -2px;
+  width: 30%;
 }
+
 .mat-card:not([class*=mat-elevation-z]) {
-    box-shadow: -1px 0 5px 0 rgb(118, 118, 118);
+  box-shadow: -1px 0 5px 0 rgb(118, 118, 118);
 }
-.akcija img{
-    width: 100%;
+
+.akcija img {
+  width: 100%;
 }
-.popust{
-    text-decoration-line: line-through;
-    font-size: 13px!important;
+
+.popust {
+  text-decoration-line: line-through;
+  font-size: 13px !important;
 }
-mat-card-content h3{
-    width: 100%;
-    margin: auto;
-    
-    font-weight: 500;
-    font-size: 20px;
-    color: #a47a06;
+
+mat-card-content h3 {
+  width: 100%;
+  margin: auto;
+
+  font-weight: 500;
+  font-size: 20px;
+  color: #a47a06;
 }
-mat-card-content button{
-    position: relative;
-   margin-left: 50%;
-   outline: none;
+
+mat-card-content button {
+  position: relative;
+  margin-left: 50%;
+  outline: none;
 }
-mat-card img{
-    
-    transition: .7s;
-    height: auto;
+
+mat-card img {
+
+  transition: .7s;
+
 
 }
 
-.popustProcenat{
-    position: absolute;
-    top: 0;
-    border-radius: 0 0 8px;
-    
-    left: 0;
-    background-color: rgb(17, 177, 9);
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    width: 50px;
-    max-width: 80px;
-    height: 30px;
-    text-align: center;
-    
-}
-.popustProcenat h2{
-    font-size: 16px;
+.popustProcenat {
+  position: absolute;
+  top: 0;
+  border-radius: 0 0 8px;
+
+  left: 0;
+  background-color: rgb(17, 177, 9);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  max-width: 80px;
+  height: 30px;
+  text-align: center;
+
 }
 
-mat-card-title{
-    text-align: center;
-    font-size: 13px!important;
-    text-transform: uppercase;
-    color: rgb(74, 150, 255);
-   
+.popustProcenat h2 {
+  font-size: 16px;
 }
-mat-card{
-    width: 200px;
-   
-    margin: 1rem .5rem ;
-    overflow: hidden;
-   
-    
+
+mat-card-title {
+  text-align: center;
+  font-size: 13px !important;
+  text-transform: uppercase;
+  color: rgb(74, 150, 255);
+
 }
-ngb-carousel{
-    z-index: 0;
+
+mat-card {
+  width: 200px;
+
+  margin: 1rem .5rem;
+  overflow: hidden;
+
+
 }
-mat-card-actions{
+
+ngb-carousel {
+  z-index: 0;
+}
+
+mat-card-actions {
   text-align: center;
 }
 
+mat-card .img {
+  height: 200px;
+}
+
 mat-card .img:hover,
-    mat-card img:focus{
-    transform: scale(1.2);
+mat-card img:focus {
+  transform: scale(1.2);
 }
-mat-card-actions button{
-    
-    border: none;
-    outline: none;
+
+mat-card-actions button {
+
+  border: none;
+  outline: none;
 }
-.infoArt{
-    box-shadow: -3px 0 15px 0 rgb(130, 130, 130);
-    padding: 1rem;
-    margin: 2rem;
-    width: auto;
+
+.infoArt {
+  box-shadow: -3px 0 15px 0 rgb(130, 130, 130);
+  padding: 1rem;
+  margin: 2rem;
+  width: auto;
 }
 
 
-.itemPer{
-    text-align: right;
-    margin: 2rem ;
-    color: rgb(74, 150, 255);
-  
-}
-.itemPer span{
-    cursor: pointer;
-}
-.itemPer span:hover{
-    color: rgb(23, 68, 132);
-    
+.itemPer {
+  text-align: right;
+  margin: 2rem;
+  color: rgb(74, 150, 255);
+
 }
 
-@media screen  and (max-width:480px){
+.itemPer span {
+  cursor: pointer;
+}
 
-    .proizvodi{
-        display: grid;
-        grid-template-columns: 50% 50%;
-    }
-   mat-card{
-       margin: .3rem .1rem;
-        width: 93%;
-   }
+.itemPer span:hover {
+  color: rgb(23, 68, 132);
+
+}
+
+@media screen and (max-width:480px) {
+
+  .proizvodi {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  mat-card {
+    margin: .3rem .1rem;
+    width: 93%;
+  }
+
+  mat-card .img {
+    height: 150px;
+  }
+
 }

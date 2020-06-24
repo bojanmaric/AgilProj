@@ -99,7 +99,7 @@ module.exports.updateArtikla=function(id,artikal,callback){
     
     var query={_id:id};
    // var art=JSON.parse(artikal);
-    console.log(query,artikal);
+   // console.log(query,artikal);
     Artikal.findByIdAndUpdate(query,{$set: artikal},callback);
 }
 
@@ -109,6 +109,16 @@ module.exports.deleteArtikal=function(id,callback){
     
 }
 
+module.exports.getartikleByVrstaAndKategorija=function(kategorija,vrsta,callback){
+    if(kategorija!='' && vrsta==''){
+        Artikal.find({"kategorija":kategorija},callback)
+
+    }else if(kategorija!='' && vrsta!=''){
+        Artikal.find({"kategorija":kategorija,"vrstaProizvoda":vrsta},callback)
+
+
+    }
+}
 
 
 

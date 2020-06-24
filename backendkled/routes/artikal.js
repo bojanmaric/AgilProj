@@ -7,6 +7,7 @@ const path = require('path');
 const crypto = require('crypto');
 const multer = require('multer');
 const fs = require('fs');
+const { json } = require('express');
 
 
 var storage = multer.diskStorage({
@@ -138,6 +139,16 @@ router.delete('/:id', authenticate, (req, res) => {
 
     });
 });
+router.get('/kategorijaVrsta',(req,res)=>{
+    console.log(req.vrstaProizvoda)
+    Artikal.getartikleByVrstaAndKategorija(req.body.kategorija,req.body.vrstaProizvoda,(err,artikli)=>{
+        if(err){
+            res.json({success:false,error:{err}})
+        }else{
+            res.json({success:true,artikli:artikli})
+        }
+    })
+})
 router.delete('/brisi/:image', (req, res) => {
 
     fs.unlinkSync('./uploads/artikli/' + req.params.image)

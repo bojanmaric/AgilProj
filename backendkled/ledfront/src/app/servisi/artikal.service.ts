@@ -5,7 +5,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { ArtShop } from '../model/ArtShop';
 import { map, find } from 'rxjs/operators';
 import { __values } from 'tslib';
-import { Router } from '@angular/router';
+import { Router, Data } from '@angular/router';
 
 
 @Injectable({
@@ -34,6 +34,7 @@ export class ArtikalService {
         console.log(error.name + ' ' + error.message);
 
       });
+     
     return this.dataChange.asObservable();
   }
 
@@ -51,19 +52,32 @@ export class ArtikalService {
   }
 
   //vraca artikle ucitane
-  public getArt(kategorija, vrsta): Array<Artikal> {
+  public getArt(kategorija, vrstaProizvoda) {
 
     if (this.dataChange.getValue().length == 0) {
       this.router.navigateByUrl('/')
     }
 
-    if (kategorija != '' && vrsta === '') {
+   /*  const data:Data={
+      kategorija:kategorija,
+      vrstaProizvoda:vrstaProizvoda
+    } */
+
+    if (kategorija != '' && vrstaProizvoda === '') {
+     // return this.httpClient.get<Artikal[]>(this.ruta+'/kategorijaVrsta',data)
       return this.dataChange.value['artikli'].filter((kat) => kat.kategorija === kategorija);
-    } else if (kategorija != '' && vrsta != '') {
-      return this.dataChange.value['artikli'].filter((kat) => kat.kategorija === kategorija && kat.vrstaProizvoda === vrsta);
+    } else if (kategorija != '' && vrstaProizvoda != '') {
+      return this.dataChange.value['artikli'].filter((kat) => kat.kategorija === kategorija && kat.vrstaProizvoda === vrstaProizvoda);
     } else {
       return this.dataChange.value['artikli'];
     }
+   // return this.httpClient.get<Artikal[]>(this.ruta+'/kategorijaVrsta',vrstaProizvoda)
+    //.subscribe(
+   /*     data=>{
+          data['artikli']
+       } */
+    // )
+
 
   }
 

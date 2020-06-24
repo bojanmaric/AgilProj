@@ -25,7 +25,7 @@ export class ArtCategoriComponent implements OnInit {
   artikliSort: Array<Artikal> = new Array<Artikal>();
   artikli: Array<Artikal> = new Array<Artikal>();
   pun=true;
-  itemPerPage = 10;
+  itemPerPage = 20;
 
   public putanja = "http://localhost:3000/artikal/image/";
 

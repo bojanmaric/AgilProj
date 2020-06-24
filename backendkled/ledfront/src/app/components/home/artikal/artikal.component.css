@@ -143,6 +143,9 @@ mat-card img{
     height: auto;
 
 }
+mat-card .img{
+    height: 200px;
+}
 mat-card .akcija{
     position: absolute;
     right: 0;

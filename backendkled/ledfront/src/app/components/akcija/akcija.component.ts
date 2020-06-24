@@ -16,7 +16,7 @@ export class AkcijaComponent implements OnInit {
 
   public putanja = "http://localhost:3000/artikal/image/";
 
-  itemPerPage = 10;
+  itemPerPage = 20;
   p:any;
   artikli:Array<Artikal[]>;
   ngOnInit(): void {
