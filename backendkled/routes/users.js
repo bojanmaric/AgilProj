@@ -57,9 +57,7 @@ router.post('/email', (req, res, next) => {
       auth: {
         user: 'email', // generated ethereal user
         pass: 'password'
-/* 
-        user: 'ledmasterweb@gmail.com', // generated ethereal user
-        pass: 'Divcibare.014' */
+
       }
     });
   
