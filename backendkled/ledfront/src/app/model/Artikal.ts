@@ -16,5 +16,6 @@ export class Artikal{
     stepenZastite:string;
     akcija:boolean;
     popust:number;
+    poslednji:boolean;
 
 }

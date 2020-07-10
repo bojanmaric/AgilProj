@@ -88,7 +88,7 @@ export class HomeComponent implements OnInit {
         id: art._id, nazivArtikla: art.nazivArtikla,
         sifraArtikla: art.sifraArtikla, cenaArtikla: art.cenaArtikla, kategorija: art.kategorija, vrstaProizvoda: art.vrstaProizvoda,
         jacina: art.jacina, tipGrla: art.tipGrla, izborSvetla: art.izborSvetla, bojaSvetla: art.bojaSvetla, napon: art.napon,
-        boja: art.boja, materijal: art.materijal, dimenzije: art.dimenzije, stepenZastite: art.stepenZastite, akcija: art.akcija, popust: art.popust
+        boja: art.boja, materijal: art.materijal, dimenzije: art.dimenzije, stepenZastite: art.stepenZastite,poslednji:art.poslednji, akcija: art.akcija,  popust: art.popust
       }
     })
 

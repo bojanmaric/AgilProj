@@ -49,7 +49,7 @@ router.put('/:id', authenticate, function (req, res) {
         nazivArtikla: req.body.nazivArtikla,
         sifraArtikla: req.body.sifraArtikla, cenaArtikla: req.body.cenaArtikla, kategorija: req.body.kategorija, vrstaProizvoda: req.body.vrstaProizvoda,
         jacina: req.body.jacina, tipGrla: req.body.tipGrla, izborSvetla: req.body.izborSvetla, bojaSvetla: req.body.bojaSvetla, napon: req.body.napon,
-        boja: req.body.boja, materijal: req.body.materijal, dimenzije: req.body.dimenzije, stepenZastite: req.body.stepenZastite, akcija: req.body.akcija, popust: req.body.popust
+        boja: req.body.boja, materijal: req.body.materijal, dimenzije: req.body.dimenzije, stepenZastite: req.body.stepenZastite, akcija: req.body.akcija, poslednji: req.body.poslednji, popust: req.body.popust
     }
 
     //  console.log(artikal)
@@ -92,14 +92,26 @@ router.get('/getAll', function (req, res, next) {
 router.get('/akcija', (req, res) => {
 
     Artikal.getAkcijaArtikal(true, (err, artikli) => {
+       
         if (err) {
             res.json({ success: false, msg: 'greska prilikom slanja zahteva' })
         } else {
+           
             res.json({ artikli: artikli })
         }
     })
 
 
+});
+router.get('/poslednjiKom', (req, res) => {
+    
+    Artikal.getPoslednjeArtikle(true,(err, artikli) => {
+        if (err) {
+            res.json({ success: false, msg: 'greska prilikom pretrage' })
+        } else {
+            res.json({ artikli: artikli })
+        }
+    })
 })
 router.get('/getArt/:id', (req, res) => {
 
@@ -115,7 +127,7 @@ router.get('/getArt/:id', (req, res) => {
     })
 
 
-})
+});
 router.get('/image/:image', (req, res) => {
 
     if (!fs.existsSync(path.join(__dirname, '../uploads/artikli/', req.params.image)))
@@ -139,13 +151,13 @@ router.delete('/:id', authenticate, (req, res) => {
 
     });
 });
-router.get('/kategorijaVrsta',(req,res)=>{
+router.get('/kategorijaVrsta', (req, res) => {
     console.log(req.vrstaProizvoda)
-    Artikal.getartikleByVrstaAndKategorija(req.body.kategorija,req.body.vrstaProizvoda,(err,artikli)=>{
-        if(err){
-            res.json({success:false,error:{err}})
-        }else{
-            res.json({success:true,artikli:artikli})
+    Artikal.getartikleByVrstaAndKategorija(req.body.kategorija, req.body.vrstaProizvoda, (err, artikli) => {
+        if (err) {
+            res.json({ success: false, error: { err } })
+        } else {
+            res.json({ success: true, artikli: artikli })
         }
     })
 })

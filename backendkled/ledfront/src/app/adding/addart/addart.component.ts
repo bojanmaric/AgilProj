@@ -37,6 +37,7 @@ export class AddartComponent implements OnInit {
     stepenZastite: [''],
   
     akcija: [false],
+    poslednji:[false],
     popust: [0]
   });
   constructor(private fb: FormBuilder, private artiService: ArtikalService, private _snackBar: MatSnackBar) { }

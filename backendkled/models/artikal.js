@@ -1,4 +1,5 @@
 const mongoose= require('mongoose');
+const { query } = require('express');
 
 const ArtikalShema=mongoose.Schema({
     nazivArtikla:{
@@ -65,6 +66,10 @@ const ArtikalShema=mongoose.Schema({
         type:Boolean,
         default:false
     }, 
+    poslednji:{
+        type:Boolean,
+        default:false
+    },
     popust:{
         type:Number,
         default:0
@@ -84,9 +89,15 @@ module.exports.addArtikal=function(artikal,callback){
     artikal.save(callback);
 }
 module.exports.getAkcijaArtikal=function(akcija,callback){
-    query={'akcija':true}
+    const query={'akcija':true}
     Artikal.find(query,callback)
 }
+
+module.exports.getPoslednjeArtikle=function(poslednji,callback){
+   const query={'poslednji':true}
+    Artikal.find(query,callback)
+}
+
 module.exports.getAllArtikle=function(query,callback){
     Artikal.find(query).populate().exec(callback);
 }
@@ -98,8 +109,6 @@ module.exports.searchArt=function(query,callback){
 module.exports.updateArtikla=function(id,artikal,callback){
     
     var query={_id:id};
-   // var art=JSON.parse(artikal);
-   // console.log(query,artikal);
     Artikal.findByIdAndUpdate(query,{$set: artikal},callback);
 }
 

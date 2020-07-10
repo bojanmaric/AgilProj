@@ -21,6 +21,7 @@ import { InboxComponent } from './admin/inbox/inbox.component';
 import { AkcijaComponent } from './components/akcija/akcija.component';
 import { KataloziComponent } from './components/katalozi/katalozi.component';
 import { AddKatalogComponent } from './adding/add-katalog/add-katalog.component';
+import { PoslednjiKomadiComponent } from './components/poslednji-komadi/poslednji-komadi.component';
 
 
 const routes: Routes = [
@@ -28,7 +29,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'addGallery', component: AddgalleryComponent, canActivate: [AuthGuard] },
   { path: 'addArtical', component: AddartComponent, canActivate: [AuthGuard] },
-  { path: 'katalozi', component: KataloziComponent }, 
+  { path: 'katalozi', component: KataloziComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent, canActivate: [AuthGuard] },
   { path: 'search/:searchText', component: SearchComponent },
@@ -41,7 +42,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'inbox', component: InboxComponent, canActivate: [AuthGuard] },
   { path: 'akcija', component: AkcijaComponent },
-  { path: 'addKatalog', component: AddKatalogComponent, canActivate: [AuthGuard]  }
+  { path: 'poslednjiKomadi', component: PoslednjiKomadiComponent },
+  { path: 'addKatalog', component: AddKatalogComponent, canActivate: [AuthGuard] }
 
 
 

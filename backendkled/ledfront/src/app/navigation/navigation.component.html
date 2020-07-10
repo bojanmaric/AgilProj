@@ -14,6 +14,8 @@
 
         <div class="linksA">
           <a mat-raised-button [routerLink]="['/']" >Pocetna</a>
+          <a mat-raised-button [routerLink]="['/poslednjiKomadi']" >Poslednji komadi</a>
+
          
         </div>
 
@@ -110,8 +112,11 @@
 
         <div class="linksA">
           <a mat-raised-button  [routerLink]="['/']"   (click)="drawer.toggle()" >Pocetna</a>
-          <a mat-raised-button  [routerLink]="['/galerija']" (click)="drawer.toggle()"  >Galerija</a>
+          
+          <a mat-raised-button [routerLink]="['/poslednjiKomadi']" (click)="drawer.toggle()">Poslednji komadi</a>
           <a mat-raised-button  [routerLink]="['/akcija']" (click)="drawer.toggle()">Akcija</a>
+          
+          <a mat-raised-button  [routerLink]="['/galerija']" (click)="drawer.toggle()"  >Galerija</a>
           <a mat-raised-button  [routerLink]="['/email']" (click)="drawer.toggle()">Poruka</a>
 
           <a mat-raised-button [routerLink]="['/katalozi']" (click)="drawer.toggle()">Katalozi</a>
@@ -221,9 +226,10 @@
       <h4> <a [routerLink]="['/']" class=""> Led Master</a></h4>
       <div class="cen">
 
-        <!-- <a mat-button [routerLink]="['/']" class="contenta title">Pocetna</a> -->
         <a mat-button class="contenta title" [routerLink]="['/galerija']">Galerija</a>
         <a mat-button class="contenta title" [routerLink]="['/akcija']">Akcija</a>
+        <a mat-button class="contenta title" [routerLink]="['/poslednjiKomadi']">Poslednji komadi</a>
+
         <a mat-button class="contenta title" [routerLink]="['/katalozi']">Katalozi</a>
         <a mat-button class="contenta title" [routerLink]="['/email']">Poruka</a>
         

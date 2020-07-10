@@ -56,11 +56,14 @@ export class ShopingComponent implements OnInit {
     return this.ruta+art;
   }
   plus(i) {
-   this.artikli[i].kolicina++
+   this.artikli[i].kolicina++;
+   this.artikli[i].ukupno=this.artikli[i].kolicina*this.artikli[i].cenaArtikla
   }
   minus(i) {
      if ((this.artikli[i].kolicina - 1) > 0) {
       this.artikli[i].kolicina--
+      this.artikli[i].ukupno=this.artikli[i].kolicina*this.artikli[i].cenaArtikla
+
     } 
   }
 

@@ -41,6 +41,7 @@ import { AOS }from 'aos';
 import { KataloziComponent } from './components/katalozi/katalozi.component';
 import { AddKatalogComponent } from './adding/add-katalog/add-katalog.component';
 import { SlikaComponent } from './components/dialogs/slika/slika.component';
+import { PoslednjiKomadiComponent } from './components/poslednji-komadi/poslednji-komadi.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { SlikaComponent } from './components/dialogs/slika/slika.component';
     AkcijaComponent,
     KataloziComponent,
     AddKatalogComponent,
-    SlikaComponent
+    SlikaComponent,
+    PoslednjiKomadiComponent
   ],
   imports: [
     BrowserModule,

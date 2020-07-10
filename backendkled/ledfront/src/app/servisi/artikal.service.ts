@@ -34,7 +34,7 @@ export class ArtikalService {
         console.log(error.name + ' ' + error.message);
 
       });
-     
+
     return this.dataChange.asObservable();
   }
 
@@ -58,24 +58,24 @@ export class ArtikalService {
       this.router.navigateByUrl('/')
     }
 
-   /*  const data:Data={
-      kategorija:kategorija,
-      vrstaProizvoda:vrstaProizvoda
-    } */
+    /*  const data:Data={
+       kategorija:kategorija,
+       vrstaProizvoda:vrstaProizvoda
+     } */
 
     if (kategorija != '' && vrstaProizvoda === '') {
-     // return this.httpClient.get<Artikal[]>(this.ruta+'/kategorijaVrsta',data)
+      // return this.httpClient.get<Artikal[]>(this.ruta+'/kategorijaVrsta',data)
       return this.dataChange.value['artikli'].filter((kat) => kat.kategorija === kategorija);
     } else if (kategorija != '' && vrstaProizvoda != '') {
       return this.dataChange.value['artikli'].filter((kat) => kat.kategorija === kategorija && kat.vrstaProizvoda === vrstaProizvoda);
     } else {
       return this.dataChange.value['artikli'];
     }
-   // return this.httpClient.get<Artikal[]>(this.ruta+'/kategorijaVrsta',vrstaProizvoda)
+    // return this.httpClient.get<Artikal[]>(this.ruta+'/kategorijaVrsta',vrstaProizvoda)
     //.subscribe(
-   /*     data=>{
-          data['artikli']
-       } */
+    /*     data=>{
+           data['artikli']
+        } */
     // )
 
 
@@ -110,6 +110,9 @@ export class ArtikalService {
 
   }
 
+  public getPoslednje() {
+    return this.httpClient.get(this.ruta + '/poslednjiKom')
+  }
 
   //brise iz korpe
   public deleteShop(artsh): Observable<boolean> {
@@ -126,8 +129,8 @@ export class ArtikalService {
     return uspesno.asObservable();
   }
 
-  public brisiShop(){
-    this.shopArtikli=[];
+  public brisiShop() {
+    this.shopArtikli = [];
     this.countArtShop.next(this.shopArtikli.length);
 
   }

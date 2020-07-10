@@ -100,7 +100,7 @@ export class ArtCategoriComponent implements OnInit {
         id: art._id, nazivArtikla: art.nazivArtikla,
         sifraArtikla: art.sifraArtikla, cenaArtikla: art.cenaArtikla, kategorija: art.kategorija, vrstaProizvoda: art.vrstaProizvoda,
         jacina: art.jacina, tipGrla: art.tipGrla, izborSvetla: art.izborSvetla, bojaSvetla: art.bojaSvetla, napon: art.napon,
-        boja: art.boja, materijal: art.materijal, dimenzije: art.dimenzije, stepenZastite: art.stepenZastite, akcija: art.akcija, popust: art.popust
+        boja: art.boja, materijal: art.materijal, dimenzije: art.dimenzije, poslednji:art.poslednji,stepenZastite: art.stepenZastite, akcija: art.akcija, popust: art.popust
       }
     })
 
