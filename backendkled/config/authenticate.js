@@ -5,7 +5,7 @@ const authenticate=(req,res,next)=>{
         console.log('authentifikacija')
         const token=req.headers.authorization.split(' ')[1]
         const decode= jwt.verify(token,'secretValue')
-        //const decode= jwt.verify(token,'AzQ,PI)0(')
+      
         req.user=decode
         next()
     }
